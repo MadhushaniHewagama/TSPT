@@ -1,7 +1,7 @@
 {
-  "name": "TSPT-client",
+  "name": "tspt",
   "integrations": {
-    "cordova": {}
+    "capacitor": {}
   },
   "type": "angular"
 }
