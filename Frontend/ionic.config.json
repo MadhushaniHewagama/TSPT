@@ -1,0 +1,7 @@
+{
+  "name": "TSPT-client",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
