@@ -5,7 +5,8 @@ import { ToastController, Platform } from '@ionic/angular';
 import { ActivatedRoute, Router, NavigationExtras } from '@angular/router';
 import { LoadingService } from '../../services/loading.service';
 // import { ErrorMessageService } from 'src/app/services/error-message.service';
-
+import { NavController } from "@ionic/angular";
+import { FormGroup, Validators, FormControl } from "@angular/forms";
 
 @Component({
   selector: 'app-login',
@@ -15,6 +16,9 @@ import { LoadingService } from '../../services/loading.service';
 export class LoginPage implements OnInit {
   errorMessage: string;
   user_name: string;
+  public login_user_form: FormGroup;
+  public _formInvalid = false;
+
   constructor(
     public toastController: ToastController,
     // private userService: UserService,
@@ -23,35 +27,32 @@ export class LoginPage implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private platform: Platform,
-    public loading: LoadingService
+    public loading: LoadingService,
+    public nav: NavController,
   ) { }
 
   ngOnInit() {
 
     this.getNavParams();
   }
+  back(): void {
+    this.nav.back();
+  }
 
-  validate() {
-    // if (this.ssoId == null || this.ssoId === '') {
-    //   this.errorMessage = 'SSO ID is required';
-    //   return false;
-    // } else if (isNaN(Number(this.ssoId))) {
-    //   this.errorMessage = 'SSO ID should be numberic';
-    //   return false;
-    // }  else if ((this.ssoId.toString().length !== 9)) {
-    //   this.errorMessage = 'SSO ID should be 9 characters long';
-    //   return false;
-    // } else {
-    //   this.errorMessage = null;
-    //   return true;
-    // }
-    return true;
+  createForm(): void {
+    this.login_user_form = new FormGroup({
+      user_name: new FormControl("", [
+        Validators.required
+      ]),
+      password: new FormControl("", [
+        Validators.required
+      ])
+ 
+    });
   }
 
   login() {
-    if (!this.validate()) {
-      return;
-    }
+
     this.loading.present();
     this.authService.getLogin(this.user_name).subscribe(
       res => {

@@ -5,6 +5,46 @@
           <img class="back-arrow" (click)="back()"
             [src]="'../../assets/images/back-arrow.png'">
         </ion-card>
+
+        <ion-card>
+            <ion-card-content>
+              <!--User Registration form -->
+              <form [formGroup]="login_user_form">
+        
+                <ion-item>
+                  <ion-label class="lbl-user_name" floating>
+                    Username:
+                  </ion-label>
+                  <ion-input type="text" formControlName="user_name" inputmode="text" ></ion-input>
+                </ion-item>
+                <div class="error-message"
+                  *ngIf="login_user_form.controls.user_name.errors && (login_user_form.controls.user_name.dirty||login_user_form.controls.user_name.touched)">
+                  <p class="error-msg" *ngIf="login_user_form.controls.user_name.errors.required" style="color:red">Username
+                    is
+                    required</p>
+                  </div>
+        
+                  <ion-item>
+                    <ion-label class="lbl-password" floating>
+                      Password:
+                    </ion-label>
+                    <ion-input type="text" formControlName="password" inputmode="text" ></ion-input>
+                  </ion-item>
+                  <div class="error-message"
+                    *ngIf="login_user_form.controls.password.errors && (login_user_form.controls.password.dirty||login_user_form.controls.password.touched)">
+                    <p class="error-msg" *ngIf="login_user_form.controls.password.errors.required" style="color:red">Password incorrect
+                      is
+                      required</p>
+                    </div>
+                
+        
+                
+              </form>
+              <ion-button color="danger" item-end (click)="login()" [disabled]="!login_user_form.valid">login
+              </ion-button>
+        
+            </ion-card-content>
+          </ion-card>
   
   
   
