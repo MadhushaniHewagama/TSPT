@@ -5,5 +5,5 @@ import { addUser
 import { Application } from "express";
 
 export const userRoutes = (app: Application, io: SocketIO.Server) => {
-  app.route("/api/v1/users").post(addUser);
+  app.route("/api/v1/user/register").post(addUser);
 };

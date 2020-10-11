@@ -7,7 +7,7 @@ import { Router } from "@angular/router";
 import { ToastController } from '@ionic/angular';
 import { LoadingService } from 'src/app/services/loading.service';
 import { UserService } from 'src/app/services/user.service';
-
+import { User } from "src/app/models/user";
 
 @Component({
   selector: 'app-signup',
@@ -19,6 +19,7 @@ export class SignupPage implements OnInit {
   public register_user_form: FormGroup;
   public _formInvalid = false;
   public errorMessage: string;
+  public user_obj:User;
   constructor(
     private user_service: UserService,
     public nav: NavController,
@@ -36,40 +37,36 @@ export class SignupPage implements OnInit {
   }
   createForm(): void {
     this.register_user_form = new FormGroup({
-      status: new FormControl("true", []),
       user_name: new FormControl("", [
         Validators.required
       ]),
       nic: new FormControl("", [
-        Validators.required,
-        Validators.maxLength(10)
+        Validators.required
       ]),
       phone_number: new FormControl("", [
-        Validators.required,
-        Validators.maxLength(50),
-        Validators.pattern("[a-zA-Z ]*")
+        Validators.required
       ]),
       email: new FormControl("", [Validators.required, Validators.email]),
       password: new FormControl("", [
-        Validators.required,
-        Validators.maxLength(50),
-      ]),
-      privilege: new FormControl("", [Validators.required])
+        Validators.required
+      ])
+ 
     });
   }
 
   register(): void {
     this.loading.present();
+    this.user_obj = this.register_user_form.value;
     if (this.register_user_form.valid) {
       
-      this.user_service.register('user_name', 'nic', 'phone_number', 'email', 'password').subscribe(
+      this.user_service.register(this.user_obj).subscribe(
         res => {
           // this.events.publish('user:added');
           // this.errorMessage=""
           // this.errorMessageServe.showMessage((' successfully'),this.errorMessage,'success');
       
           // this.router.navigate(["/admin-dashbord/users"]);
-          
+          console.log("success");
           this.loading.dismiss();
         
         },

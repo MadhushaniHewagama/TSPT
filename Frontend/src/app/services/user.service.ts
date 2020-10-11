@@ -5,6 +5,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
   
 import {  API_URL } from '../config/constants';
+import { User } from '../models/user';
 @Injectable({
   providedIn: 'root'
 })
@@ -12,8 +13,9 @@ export class UserService {
 
   constructor(private httpClient: HttpClient) { }
 
-  public register(user_name: string, nic: string, phone_number: number, emai): Observable<any> {
-    const url = `${API_URL}/users/auth/${user_name}`;
-    return this.httpClient.get(url);
+  public register(user_obj:User): Observable<any> {
+    console.log(JSON.stringify(user_obj))
+    const url = `${API_URL}/user/register`;
+    return this.httpClient.post(url,user_obj);
   }
 }

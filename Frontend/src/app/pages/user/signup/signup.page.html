@@ -10,62 +10,40 @@
       <form [formGroup]="register_user_form">
 
         <ion-item>
-          <ion-label>Active user</ion-label>
-          <ion-toggle formControlName="status" slot="start" color="success"></ion-toggle>
-        </ion-item>
-
-        <ion-item>
-          <ion-label class="lbl-sso-id" floating>
+          <ion-label class="lbl-user_name" floating>
             Username:
           </ion-label>
           <ion-input type="text" formControlName="user_name" inputmode="text" ></ion-input>
         </ion-item>
         <div class="error-message"
-          *ngIf="register_user_form.controls.sso_id.errors && (register_user_form.controls.sso_id.dirty||register_user_form.controls.sso_id.touched)">
-          <p class="error-msg" *ngIf="register_user_form.controls.sso_id.errors.required" style="color:red">SSO ID
+          *ngIf="register_user_form.controls.user_name.errors && (register_user_form.controls.user_name.dirty||register_user_form.controls.user_name.touched)">
+          <p class="error-msg" *ngIf="register_user_form.controls.user_name.errors.required" style="color:red">Username
             is
             required</p>
           </div>
 
         <ion-item>
-          <ion-label class="lbl-first-name" floating>
-            First Name:
-          </ion-label>
-          <ion-input id="first_name" formControlName="first_name" type="text" maxlength="40"></ion-input>
-        </ion-item>
-        <div class="error-message"
-          *ngIf="register_user_form.controls.first_name.errors && (register_user_form.controls.first_name.dirty||register_user_form.controls.first_name.touched)">
-          <p class="error-msg" *ngIf="register_user_form.controls.first_name.errors.required" style="color:red">
-            First
-            Name is required
-          </p>
-          <p class="error-msg" *ngIf="register_user_form.controls.first_name.errors.pattern" style="color:red">
-            Invalid format (Eg: John)
-          </p>
-        </div>
-        
-        <ion-item>
-          <ion-label class="lbl-lastName" floating>
+          <ion-label class="lbl-nic" floating>
             NIC:
           </ion-label>
           <ion-input id="nic" type="text" formControlName="nic" ></ion-input>
         </ion-item>
         <div class="error-message"
-          *ngIf="register_user_form.controls.last_name.errors && (register_user_form.controls.last_name.dirty||register_user_form.controls.last_name.touched)">
-          <p class="error-msg" *ngIf="register_user_form.controls.last_name.errors.required" style="color:red">NIC
+          *ngIf="register_user_form.controls.nic.errors && (register_user_form.controls.nic.dirty||register_user_form.controls.nic.touched)">
+          <p class="error-msg" *ngIf="register_user_form.controls.nic.errors.required" style="color:red">NIC
             is required</p>
-          <p class="error-msg" *ngIf="register_user_form.controls.last_name.errors.pattern" style="color:red">Invalid format (Eg: Doe)</p>
+         
         </div>
 
         <ion-item>
-          <ion-label class="lbl-email" floating>
+          <ion-label class="lbl-phone_number" floating>
             Phone Number:
           </ion-label>
           <ion-input id="phone_number" type="numeric" formControlName="phone_number" maxlength="10" ></ion-input>
         </ion-item>
         <div class="error-message"
-          *ngIf="register_user_form.controls.email.errors && (register_user_form.controls.email.dirty||register_user_form.controls.email.touched)">
-          <p class="error-msg" *ngIf="register_user_form.controls.email.errors.required" style="color:red">Phone number is
+          *ngIf="register_user_form.controls.phone_number.errors && (register_user_form.controls.phone_number.dirty||register_user_form.controls.phone_number.touched)">
+          <p class="error-msg" *ngIf="register_user_form.controls.phone_number.errors.required" style="color:red">Phone number is
             required</p>
         </div>
 
@@ -77,14 +55,14 @@
         </ion-item>
         
         <ion-item>
-          <ion-label class="lbl-email" floating>
+          <ion-label class="lbl-password" floating>
             Password:
           </ion-label>
           <ion-input id="password" type="text" formControlName="password" ></ion-input>
         </ion-item>
         <div class="error-message"
-          *ngIf="register_user_form.controls.email.errors && (register_user_form.controls.email.dirty||register_user_form.controls.email.touched)">
-          <p class="error-msg" *ngIf="register_user_form.controls.email.errors.required" style="color:red">Password is
+          *ngIf="register_user_form.controls.password.errors && (register_user_form.controls.password.dirty||register_user_form.controls.password.touched)">
+          <p class="error-msg" *ngIf="register_user_form.controls.password.errors.required" style="color:red">Password is
             required</p>
         </div>
 
