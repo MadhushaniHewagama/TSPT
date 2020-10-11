@@ -13,4 +13,9 @@ export class HomePage {
     this.router.navigate(['login']);
   }
 
+  request_account(){
+    this.router.navigate(['signup']);
+    console.log('test1')
+  }
+
 }
