@@ -1,9 +1,64 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>manager-dashboard</ion-title>
-  </ion-toolbar>
-</ion-header>
 
-<ion-content>
 
+  <ion-content id="m_dash">
+    <ion-card color="danger" id="manager-dashboard-head">
+      <!-- <span><i class="fas fa-sign-out-alt"></i></span> -->
+      <img class="logout-icon"
+      [src]="'../../assets/images/back-arrow.png'">
+     </ion-card> 
+  <h1 id="title">Manager DashBoard</h1>
+
+
+
+  <ion-list>
+    <ion-card  (click)="invoke()">
+      <ion-card-header>
+        <h5>System Overview</h5>
+      </ion-card-header>
+      <ion-card-content>
+        Keep close to Nature's heart... and break clear away, once in awhile,
+        and climb a mountain or spend a week in the woods. Wash your spirit clean.
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card (click)="invoke()">
+      <ion-card-header>
+        <h5>Generate Time Tables</h5>
+      </ion-card-header>
+      <ion-card-content>
+        Keep close to Nature's heart... and break clear away, once in awhile,
+        and climb a mountain or spend a week in the woods. Wash your spirit clean.
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card (click)="invoke()">
+      <ion-card-header>
+        <h5>Statistical Reports</h5>
+      </ion-card-header>
+      <ion-card-content>
+        Keep close to Nature's heart... and break clear away, once in awhile,
+        and climb a mountain or spend a week in the woods. Wash your spirit clean.
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card (click)="invoke()">
+      <ion-card-header>
+        <h5>View Inspectors</h5>
+      </ion-card-header>
+      <ion-card-content>
+        Keep close to Nature's heart... and break clear away, once in awhile,
+        and climb a mountain or spend a week in the woods. Wash your spirit clean.
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card (click)="invoke()">
+      <ion-card-header>
+        <h5>View Users</h5>
+      </ion-card-header>
+      <ion-card-content>
+        Keep close to Nature's heart... and break clear away, once in awhile,
+        and climb a mountain or spend a week in the woods. Wash your spirit clean.
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
 </ion-content>

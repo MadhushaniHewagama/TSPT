@@ -11,5 +11,7 @@ export class UserDashboardPage implements OnInit {
 
   ngOnInit() {
   }
-
+  invoke():void{
+    console.log('Success')
+  }
 }
