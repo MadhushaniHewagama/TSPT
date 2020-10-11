@@ -15,7 +15,7 @@ export class UserService {
 
   public register(user_obj:User): Observable<any> {
     console.log(JSON.stringify(user_obj))
-    const url = `${API_URL}/user/register`;
+    const url = `${API_URL}/user/register/${user_obj.user_name}/${user_obj.nic}/${user_obj.email}/${user_obj.phone_number}/${user_obj.password}`;
     return this.httpClient.post(url,user_obj);
   }
 }
