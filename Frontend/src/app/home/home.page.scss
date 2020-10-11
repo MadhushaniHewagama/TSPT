@@ -1,27 +1,42 @@
-#container {
-  text-align: center;
+#loginpage{
+    .login-bg {
+    // background-image: url(../../../assets/images/loginpage-bg.jpg);
+    background-position: bottom center;
+    height: calc(100vh - 80px);
+    background-repeat: no-repeat;
+    background-size: contain;
+    }
+   
 
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-}
+    .validate-btn{
+        .button{
+            //#ed1d24
+            border: 1px solid #d70010 !important;
+            border-radius: 4px;
+            padding-left: 10px !important;
+            background-color: transparent !important;
+            width: 200px !important;
+            background: transparent !important;
+            margin: 0 auto;
+            height: 50px;
+            color: #d70010;
+            text-shadow: none !important;
+            .button-native{
+                background-color: transparent !important;
+                background: transparent !important;
+            }
+        }
+    }
+    .title-container{
+        width: 300px;
+        margin: 0px auto 30px;
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
-}
+    }
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
-}
-
-#container a {
-  text-decoration: none;
+    .ion-login-btn{
+        --box-shadow:none;
+    }
+    .ion-account-btn{
+        --box-shadow:none;
+    }
 }

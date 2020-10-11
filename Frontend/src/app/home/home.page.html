@@ -1,20 +1,12 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content id="loginpage">
+  <div class="login-bg">
+  <div class="title-container">
+          <ion-label class="text">Ticketing System</ion-label>
+  </div>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  <div class="validate-btn">
+      <ion-button expand="block" (click)="login()" type="submit" color="transparent" class="ion-login-btn">Login</ion-button>
+      <ion-button expand="block" (click)="request_account()" type="submit" color="transparent" class="ion-account-btn">Request for account</ion-button>
+  </div>
   </div>
 </ion-content>
