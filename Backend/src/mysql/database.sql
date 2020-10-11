@@ -36,3 +36,11 @@ CREATE TABLE bus(
   PRIMARY KEY (bus_id)
 );
 
+insert into login_data values ("manager1",'manager1',3);
+insert into login_data values ("manager2",'manager2',3);
+insert into login_data values ("inspector1",'inspector1',2);
+insert into login_data values ("inspector2",'inspector2',2);
+insert into login_data values ("inspector3",'inspector3',2);
+insert into login_data values ("inspector4",'inspector4',2);
+insert into login_data values ("inspector5",'inspector5',2);
+

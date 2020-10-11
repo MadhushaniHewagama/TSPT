@@ -32,8 +32,7 @@
                   </ion-item>
                   <div class="error-message"
                     *ngIf="login_user_form.controls.password.errors && (login_user_form.controls.password.dirty||login_user_form.controls.password.touched)">
-                    <p class="error-msg" *ngIf="login_user_form.controls.password.errors.required" style="color:red">Password incorrect
-                      is
+                    <p class="error-msg" *ngIf="login_user_form.controls.password.errors.required" style="color:red">Password    is
                       required</p>
                     </div>
                 
@@ -42,9 +41,14 @@
               </form>
               <ion-button color="danger" item-end (click)="login()" [disabled]="!login_user_form.valid">login
               </ion-button>
-        
+             
             </ion-card-content>
+
           </ion-card>
+          <div class="error-message"
+                    *ngIf="pwd_invalid">
+                    <p class="error-msg" style="color:red">Password incorrect</p>
+                    </div>
   
   
   
