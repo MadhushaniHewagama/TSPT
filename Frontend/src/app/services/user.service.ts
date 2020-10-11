@@ -12,7 +12,7 @@ export class UserService {
 
   constructor(private httpClient: HttpClient) { }
 
-  public register(user_name: string): Observable<any> {
+  public register(user_name: string, nic: string, phone_number: number, emai): Observable<any> {
     const url = `${API_URL}/users/auth/${user_name}`;
     return this.httpClient.get(url);
   }

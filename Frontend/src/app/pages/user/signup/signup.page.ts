@@ -37,23 +37,23 @@ export class SignupPage implements OnInit {
   createForm(): void {
     this.register_user_form = new FormGroup({
       status: new FormControl("true", []),
-      sso_id: new FormControl("", [
-        Validators.required,
-        Validators.maxLength(9),
-        Validators.minLength(9),
-        Validators.pattern("[0-9]*")
+      user_name: new FormControl("", [
+        Validators.required
       ]),
-      first_name: new FormControl("", [
+      nic: new FormControl("", [
         Validators.required,
-        Validators.maxLength(40),
-        Validators.pattern("[a-zA-Z ]*")
+        Validators.maxLength(10)
       ]),
-      last_name: new FormControl("", [
+      phone_number: new FormControl("", [
         Validators.required,
         Validators.maxLength(50),
         Validators.pattern("[a-zA-Z ]*")
       ]),
       email: new FormControl("", [Validators.required, Validators.email]),
+      password: new FormControl("", [
+        Validators.required,
+        Validators.maxLength(50),
+      ]),
       privilege: new FormControl("", [Validators.required])
     });
   }
@@ -62,7 +62,7 @@ export class SignupPage implements OnInit {
     this.loading.present();
     if (this.register_user_form.valid) {
       
-      this.user_service.register('value').subscribe(
+      this.user_service.register('user_name', 'nic', 'phone_number', 'email', 'password').subscribe(
         res => {
           // this.events.publish('user:added');
           // this.errorMessage=""
