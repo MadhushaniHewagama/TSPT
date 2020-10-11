@@ -67,6 +67,7 @@ export class SignupPage implements OnInit {
       
           // this.router.navigate(["/admin-dashbord/users"]);
           console.log("success");
+          this.router.navigate(['login']);
           this.loading.dismiss();
         
         },

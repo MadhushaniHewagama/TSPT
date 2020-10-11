@@ -20,7 +20,8 @@ const routes: Routes = [
     loadChildren: () => import('./pages/user/signup/signup.module').then( m => m.SignupPageModule)
   },  { path: 'user-dashboard', loadChildren: './pages/user/user-dashboard/user-dashboard.module#UserDashboardPageModule' },
   { path: 'manager-dashboard', loadChildren: './pages/manager/manager-dashboard/manager-dashboard.module#ManagerDashboardPageModule' },
-  { path: 'inspector-dashboard', loadChildren: './pages/inspector/inspector-dashboard/inspector-dashboard.module#InspectorDashboardPageModule' }
+  { path: 'inspector-dashboard', loadChildren: './pages/inspector/inspector-dashboard/inspector-dashboard.module#InspectorDashboardPageModule' },
+  { path: 'scan-qr', loadChildren: './pages/inspector/scan-qr/scan-qr.module#ScanQrPageModule' }
 
 ];
 
