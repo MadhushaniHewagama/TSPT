@@ -9,7 +9,7 @@
     background-repeat: no-repeat;
     background-size: contain;
     background: rgb(215,0,16);
-    background: linear-gradient(0deg, rgba(215,0,16,1) 0%, rgba(255,255,255,1) 38%, rgba(240,219,220,1) 100%);
+    background: linear-gradient(0deg, rgba(215,0,16,5) 0%, rgba(255,255,255,1) 38%, rgba(240,219,220,1) 100%);
     }
    
     .title-container{
@@ -24,7 +24,8 @@
         
     }
     .validate-btn{
-        margin-top: 100px;
+        margin-top: 0px;
+        margin-bottom: 20px;
         .button{
             //#ed1d24
             border: 1px solid #d70010 !important;
@@ -37,7 +38,8 @@
             height: 50px;
             color: #d70010;
             text-shadow: none !important;
-            margin-top: 30px ;
+            margin-top: 20px ;
+            
             .button-native{
                 background-color: transparent !important;
                 background: transparent !important;
@@ -55,5 +57,8 @@
     }
     .ion-account-btn{
         --box-shadow:none;
+    }
+    ion-card{
+        margin-top: -10px;
     }
 }
