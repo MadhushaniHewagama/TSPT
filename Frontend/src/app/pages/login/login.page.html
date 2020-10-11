@@ -1,9 +1,18 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>login</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content>
-
+<ion-content id="loginpage">
+  <div class="login-bg">
+  <!-- <div class="wabtec-logo"><img src="../../assets/images/wabtec-logo.png" ></div> -->
+  <div class="ssoid-container">
+          <ion-label class="text">Please validate your SSO ID</ion-label>
+          <ion-item class="btn" no-padding lines="none">
+              <ion-input  [(ngModel)]="user_name" placeholder="User Name"   class="id-input"></ion-input>
+          </ion-item>
+  </div>
+  <div *ngIf="errorMessage" class="error-message">
+      <ion-icon color="danger"  name="information-circle"></ion-icon>
+      {{ errorMessage }}
+  </div>
+  <div class="validate-btn">
+      <ion-button expand="block" (click)="login()" type="submit" color="transparent" class="ion-validate-btn">Validate</ion-button>
+  </div>
+  </div>
 </ion-content>

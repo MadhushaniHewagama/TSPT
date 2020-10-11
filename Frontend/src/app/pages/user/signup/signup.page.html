@@ -1,10 +1,95 @@
+<ion-content id="add-user-content">
+  <ion-card color="danger" id="add-user">
+    <img class="back-arrow" (click)="back()"
+      [src]="'../../assets/images/back-arrow.png'">
+  </ion-card>
 
+  <ion-card>
+    <ion-card-content>
+      <!--User Registration form -->
+      <form [formGroup]="register_user_form">
 
-<ion-content>
-  <div class="container">
-  <ion-item>
-    <ion-label >Floating Label</ion-label>
-    <ion-input></ion-input>
-  </ion-item>
-</div>
+        <ion-item>
+          <ion-label>Active user</ion-label>
+          <ion-toggle formControlName="status" slot="start" color="success"></ion-toggle>
+        </ion-item>
+
+        <ion-item>
+          <ion-label class="lbl-sso-id" floating>
+            SSO ID:
+          </ion-label>
+          <ion-input type="text" formControlName="sso_id" inputmode="numeric" maxlength="9" minlength="9" ></ion-input>
+        </ion-item>
+        <div class="error-message"
+          *ngIf="register_user_form.controls.sso_id.errors && (register_user_form.controls.sso_id.dirty||register_user_form.controls.sso_id.touched)">
+          <p class="error-msg" *ngIf="register_user_form.controls.sso_id.errors.required" style="color:red">SSO ID
+            is
+            required</p>
+          <p class="error-msg" *ngIf="register_user_form.controls.sso_id.errors.maxlength || register_user_form.controls.sso_id.errors.pattern" style="color:red">
+            Invalid format (Eg: 123456789)
+          </p>
+          
+        </div>
+        <ion-item>
+          <ion-label class="lbl-first-name" floating>
+            First Name:
+          </ion-label>
+          <ion-input id="first_name" formControlName="first_name" type="text" maxlength="40"></ion-input>
+        </ion-item>
+        <div class="error-message"
+          *ngIf="register_user_form.controls.first_name.errors && (register_user_form.controls.first_name.dirty||register_user_form.controls.first_name.touched)">
+          <p class="error-msg" *ngIf="register_user_form.controls.first_name.errors.required" style="color:red">
+            First
+            Name is required
+          </p>
+          <p class="error-msg" *ngIf="register_user_form.controls.first_name.errors.pattern" style="color:red">
+            Invalid format (Eg: John)
+          </p>
+        </div>
+        <ion-item>
+          <ion-label class="lbl-lastName" floating>
+            Last Name:
+          </ion-label>
+          <ion-input id="last_name" type="text" formControlName="last_name" maxlength="50"></ion-input>
+        </ion-item>
+        <div class="error-message"
+          *ngIf="register_user_form.controls.last_name.errors && (register_user_form.controls.last_name.dirty||register_user_form.controls.last_name.touched)">
+          <p class="error-msg" *ngIf="register_user_form.controls.last_name.errors.required" style="color:red">Last
+            Name is required</p>
+          <p class="error-msg" *ngIf="register_user_form.controls.last_name.errors.pattern" style="color:red">Invalid format (Eg: Doe)</p>
+        </div>
+        <ion-item>
+          <ion-label class="lbl-email" floating>
+            Email:
+          </ion-label>
+          <ion-input id="name" type="email" formControlName="email" maxlength="50" required></ion-input>
+        </ion-item>
+        <div class="error-message"
+          *ngIf="register_user_form.controls.email.errors && (register_user_form.controls.email.dirty||register_user_form.controls.email.touched)">
+          <p class="error-msg" *ngIf="register_user_form.controls.email.errors.required" style="color:red">Email is
+            required</p>
+          <p class="error-msg"
+            *ngIf="register_user_form.controls.email.errors.email && register_user_form.controls.email.touched"
+            style="color:red">Invalid format (Eg: name@wabtec.com)</p>
+        </div>
+        <ion-radio-group formControlName="privilege">
+          <ion-list-header>
+            <ion-label id="privilege" class="lbl-privilege">Privilege</ion-label>
+          </ion-list-header>
+          <ion-item>
+            <ion-label type="radio" class="lbl-user">User</ion-label>
+            <ion-radio slot="start" value="0"></ion-radio>
+          </ion-item>
+          <ion-item>
+            <ion-label type="radio" class="lbl-admin">Admin</ion-label>
+            <ion-radio slot="start" value="1"></ion-radio>
+          </ion-item>
+        </ion-radio-group>
+
+      </form>
+      <ion-button color="danger" item-end (click)="register()" [disabled]="!register_user_form.valid">Register
+      </ion-button>
+
+    </ion-card-content>
+  </ion-card>
 </ion-content>
