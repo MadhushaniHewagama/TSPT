@@ -11,5 +11,7 @@ export class InspectorDashboardPage implements OnInit {
 
   ngOnInit() {
   }
-
+invoke():void{
+  console.log('Success')
+}
 }

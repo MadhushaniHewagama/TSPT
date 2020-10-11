@@ -1,9 +1,44 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>inspector-dashboard</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content id="u_dash">
+    <ion-card color="danger" id="manager-dashboard-head">
+      <!-- <span><i class="fas fa-sign-out-alt"></i></span> -->
+      <img class="logout-icon"
+      [src]="'../../assets/images/back-arrow.png'">
+     </ion-card> 
+  <h1 id="title">Welcome</h1>
 
-<ion-content>
 
+
+  <ion-list>
+    <ion-card  (click)="invoke()">
+      <ion-card-header>
+        <h5>Scan QR</h5>
+      </ion-card-header>
+      <ion-card-content>
+        Keep close to Nature's heart... and break clear away, once in awhile,
+        and climb a mountain or spend a week in the woods. Wash your spirit clean.
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card (click)="invoke()">
+      <ion-card-header>
+        <h5>Manual Ticket</h5>
+      </ion-card-header>
+      <ion-card-content>
+        Keep close to Nature's heart... and break clear away, once in awhile,
+        and climb a mountain or spend a week in the woods. Wash your spirit clean.
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card (click)="invoke()">
+      <ion-card-header>
+        <h5>View Tickets</h5>
+      </ion-card-header>
+      <ion-card-content>
+        Keep close to Nature's heart... and break clear away, once in awhile,
+        and climb a mountain or spend a week in the woods. Wash your spirit clean.
+      </ion-card-content>
+    </ion-card>
+
+
+  </ion-list>
 </ion-content>

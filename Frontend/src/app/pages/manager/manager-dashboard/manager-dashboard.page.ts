@@ -12,4 +12,7 @@ export class ManagerDashboardPage implements OnInit {
   ngOnInit() {
   }
 
+ invoke():void{
+    console.log('Success')
+  }
 }
