@@ -32,8 +32,8 @@ export class LoginPage implements OnInit {
   ) { }
 
   ngOnInit() {
-
-    this.getNavParams();
+    this.createForm();
+    // this.getNavParams();
   }
   back(): void {
     this.nav.back();
@@ -79,12 +79,12 @@ export class LoginPage implements OnInit {
     );
   }
 
-  getNavParams() {
-    this.route.queryParams.subscribe(params => {
-      if (this.router.getCurrentNavigation().extras.state) {
-        this.errorMessage = this.router.getCurrentNavigation().extras.state.login_status.errorMessage;
-      }
-    });
-  }
+  // getNavParams() {
+  //   this.route.queryParams.subscribe(params => {
+  //     if (this.router.getCurrentNavigation().extras.state) {
+  //       this.errorMessage = this.router.getCurrentNavigation().extras.state.login_status.errorMessage;
+  //     }
+  //   });
+  // }
 
 }
