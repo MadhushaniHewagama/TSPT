@@ -1,17 +1,27 @@
 
 
 #loginpage{
+    h1{
+        margin-left: 50px;
+        margin-top: 14px;
+        margin-bottom: 14px;
+        display: inline-block;
 
+    }
     .login-bg {
     // background-image: url(../../assets/images/bg1.jpg);
-    background-position: bottom center;
-    height: calc(100vh - 80px);
+    // background-position: bottom center;
+    height: 100%;
     background-repeat: no-repeat;
-    background-size: contain;
+    // background-size: contain;
     background: rgb(215,0,16);
     background: linear-gradient(0deg, rgba(215,0,16,5) 0%, rgba(255,255,255,1) 38%, rgba(240,219,220,1) 100%);
     }
-   
+   .home-img{
+       width: 200px;
+       height: 100px;
+       margin-left: 30%;
+   }
     .title-container{
         
         padding-top: 30px;
@@ -23,26 +33,32 @@
         }
         
     }
-    .validate-btn{
-        margin-top: 0px;
-        margin-bottom: 20px;
-        .button{
-            //#ed1d24
-            border: 1px solid #d70010 !important;
-            border-radius: 4px;
-            padding-left: 10px !important;
-            background-color: transparent !important;
-            width: 250px !important;
-            background: transparent !important;
-            margin: 0 auto;
-            height: 50px;
-            color: #d70010;
-            text-shadow: none !important;
-            margin-top: 20px ;
-            
-            .button-native{
+    .card{
+        margin-top: 5%;
+        background: white !important;
+        margin-left:5%;
+        margin-right: 5%;
+        .validate-btn{
+            margin-top: 10px;
+            margin-bottom: 20px;
+            .button{
+                //#ed1d24
+                border: 1px solid #d70010 !important;
+                border-radius: 4px;
+                padding-left: 10px !important;
                 background-color: transparent !important;
+                width: 250px !important;
                 background: transparent !important;
+                margin: 0 auto;
+                height: 50px;
+                color: #d70010;
+                text-shadow: none !important;
+                margin-top: 20px ;
+                
+                .button-native{
+                    background-color: transparent !important;
+                    background: transparent !important;
+                }
             }
         }
     }

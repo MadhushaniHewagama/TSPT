@@ -1,5 +1,11 @@
 #loginpage{
-    margin: 0 !important;
+    
+    .login-bg{
+        height: 100%;
+        background-repeat: no-repeat;
+        background: rgb(215,0,16);
+        background: linear-gradient(0deg, rgba(215,0,16,5) 0%, rgba(255,255,255,1) 38%, rgba(240,219,220,1) 100%);
+    }
     ion-toolbar{
         ion-textarea{
             margin: 10px 0 !important;
@@ -13,6 +19,19 @@
         margin-left: 20px;
         margin-top: 14px;
         margin-bottom: 14px;
+    }
+    .card{
+        margin-top: 15%;
+        background: white !important;
+        margin-left:5%;
+        margin-right: 5%;
+    }
+    h1{
+        margin-left: 50px;
+        margin-top: 14px;
+        margin-bottom: 14px;
+        display: inline-block;
+
     }
 }
 

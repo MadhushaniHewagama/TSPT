@@ -1,18 +1,22 @@
-<ion-content id="add-user-content">
-  <ion-card color="danger" id="add-user">
+<ion-content id="loginpage">
+<ion-content id="login-content">
+  <div class="login-bg"> 
+  <ion-card color="danger" id="login-user">
     <img class="back-arrow" (click)="back()"
       [src]="'../../assets/images/back-arrow.png'">
+      <h1>Create Account</h1>
   </ion-card>
 
-  <ion-card>
+  <ion-card class="card">
     <ion-card-content>
+      
       <!--User Registration form -->
       <form [formGroup]="register_user_form">
-
+        <ion-label class="lbl-user_name" floating>
+          Username:
+        </ion-label>
         <ion-item>
-          <ion-label class="lbl-user_name" floating>
-            Username:
-          </ion-label>
+          
           <ion-input type="text" formControlName="user_name" inputmode="text" ></ion-input>
         </ion-item>
         <div class="error-message"
@@ -21,11 +25,11 @@
             is
             required</p>
           </div>
-
-        <ion-item>
           <ion-label class="lbl-nic" floating>
             NIC:
           </ion-label>
+        <ion-item>
+         
           <ion-input id="nic" type="text" formControlName="nic" ></ion-input>
         </ion-item>
         <div class="error-message"
@@ -34,11 +38,11 @@
             is required</p>
          
         </div>
-
+        <ion-label class="lbl-phone_number" floating>
+          Phone Number:
+        </ion-label>
         <ion-item>
-          <ion-label class="lbl-phone_number" floating>
-            Phone Number:
-          </ion-label>
+         
           <ion-input id="phone_number" type="numeric" formControlName="phone_number" maxlength="10" ></ion-input>
         </ion-item>
         <div class="error-message"
@@ -46,18 +50,18 @@
           <p class="error-msg" *ngIf="register_user_form.controls.phone_number.errors.required" style="color:red">Phone number is
             required</p>
         </div>
-
+        <ion-label class="lbl-email" floating>
+          Email:
+        </ion-label>
         <ion-item>
-          <ion-label class="lbl-email" floating>
-            Email:
-          </ion-label>
+         
           <ion-input id="email" type="email" formControlName="email"></ion-input>
         </ion-item>
-        
+        <ion-label class="lbl-password" floating>
+          Password:
+        </ion-label>
         <ion-item>
-          <ion-label class="lbl-password" floating>
-            Password:
-          </ion-label>
+         
           <ion-input id="password" type="text" formControlName="password" ></ion-input>
         </ion-item>
         <div class="error-message"
@@ -73,4 +77,5 @@
 
     </ion-card-content>
   </ion-card>
+</div>
 </ion-content>
