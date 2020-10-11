@@ -17,6 +17,7 @@ export class LoginPage implements OnInit {
   errorMessage: string;
   user_name: string;
   pwd_invalid: boolean;
+  user_name_invalid: boolean;
   public login_user_form: FormGroup;
   public _formInvalid = false;
 
@@ -35,6 +36,7 @@ export class LoginPage implements OnInit {
   ngOnInit() {
     this.createForm();
     this.pwd_invalid=false;
+    this.user_name_invalid=false;
     // this.getNavParams();
   }
   back(): void {
@@ -56,48 +58,60 @@ export class LoginPage implements OnInit {
   login() {
     this.loading.present();
     this.pwd_invalid=false;
-    if (!this.login_user_form.valid) {return}
+    if (!this.login_user_form.valid) {
+      this.loading.dismiss();
+      return}
     this.authService.getLogin(this.login_user_form.controls.user_name.value).subscribe(
       res => {
         // console.log(res);
         // console.log(res[0].privilege);
         // console.log(res.privilege===1);
-        if(res[0].password==this.login_user_form.controls.password.value){
-          if (res[0].privilege === 0) {
-            const navigationExtras: NavigationExtras = {
-              state: {
-                login_status: res[0]
-              }
-            };
-            this.router.navigate(['user-dashboard'], navigationExtras);
-          }else if(res[0].privilege ===1){
-            const navigationExtras: NavigationExtras = {
-              state: {
-                login_status: res[0]
-              }
-            };
-            this.router.navigate(['inspector-dashboard'], navigationExtras);
+        try{
+          if(res[0].password==this.login_user_form.controls.password.value){
+            if (res[0].privilege === 0) {
+              const navigationExtras: NavigationExtras = {
+                state: {
+                  login_status: res[0]
+                }
+              };
+              this.router.navigate(['user-dashboard'], navigationExtras);
+            }else if(res[0].privilege ===1){
+              const navigationExtras: NavigationExtras = {
+                state: {
+                  login_status: res[0]
+                }
+              };
+              this.router.navigate(['inspector-dashboard'], navigationExtras);
+            }else{
+              const navigationExtras: NavigationExtras = {
+                state: {
+                  login_status: res[0]
+                }
+              };
+              this.router.navigate(['manager-dashboard'], navigationExtras);
+            }
           }else{
-            const navigationExtras: NavigationExtras = {
-              state: {
-                login_status: res[0]
-              }
-            };
-            this.router.navigate(['manager-dashboard'], navigationExtras);
+            this.pwd_invalid=true;
           }
-        }else{
-          this.pwd_invalid=true;
+          
+         
+          this.loading.dismiss();
         }
-        
-       
+        catch(err){
+          this.user_name_invalid=true;
+        // this.errorMessageServe.showServerError(err.status);
         this.loading.dismiss();
+        }
+       
       },
       err => {
         console.log('Error :: ', err);
+        this.user_name_invalid=true;
         // this.errorMessageServe.showServerError(err.status);
         this.loading.dismiss();
       }
     );
+    this.loading.dismiss();
   }
 
   // getNavParams() {

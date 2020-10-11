@@ -14,7 +14,7 @@ export const getLogin = (req: Request, res: Response) => {
   "';",
     (err: MysqlError, results: any) => {
         if (err) {
-            res.status(500).json({ error: err });
+            res.json({ error: err });
           } else {
             res.json(results);
           }
