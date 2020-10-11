@@ -1,42 +1,62 @@
-ion-list{
-    margin-top:45px;
-    padding-left: 40px;
-    padding-right: 40px;
-    border-color: yellow;
-    ion-card{
-        border-radius: 15px;
-        margin-top: 25px;
-
-        ion-card-header{
-            h5{
-                color: red;
-                text-align: center;
+#mpage{
+    h1{
+        margin-left: 100px;
+        margin-top: 14px;
+        margin-bottom: 14px;
+        display: inline-block;
+    }
+    .m-bg{
+        height: 200%;
+        background-repeat: no-repeat;
+        background: rgb(215,0,16);
+        background: linear-gradient(0deg, rgba(215,0,16,5) 0%, rgba(255,255,255,1) 38%, rgba(240,219,220,1) 100%);
+  
+        ion-toolbar{
+            ion-textarea{
+                margin: 10px 0 !important;
+            }
+        }
+        .logout-icon{
+            width: 14px !important;
+            height: 24px !important;
+            float: left;
+            display: inline-block;
+            margin-left: 20px;
+            margin-top: 14px;
+            margin-bottom: 14px;
+        }
+    
+        #title{
+            color: red;
+            text-align: center;
+            margin-top: 40px;
+        }
+    }
+    ion-list{
+        margin-top:45px;
+        margin-left: 10px;
+        margin-right: 10px;
+        padding-left: 40px;
+        padding-right: 40px;
+        border-color: red;
+        // background-color:  transparent !important;
+        ion-card{
+            border-radius: 15px;
+            margin-top: 25px;
+    
+            ion-card-header{
+                h5{
+                    color: red;
+                    text-align: center;
+                }
             }
         }
     }
+    
+    
+    
+
 }
 
 
-#m_dash{
-    margin: 0 !important;
-    ion-toolbar{
-        ion-textarea{
-            margin: 10px 0 !important;
-        }
-    }
-    .logout-icon{
-        width: 14px !important;
-        height: 24px !important;
-        float: left;
-        display: inline-block;
-        margin-left: 20px;
-        margin-top: 14px;
-        margin-bottom: 14px;
-    }
 
-    #title{
-        color: red;
-        text-align: center;
-        margin-top: 40px;
-    }
-}
