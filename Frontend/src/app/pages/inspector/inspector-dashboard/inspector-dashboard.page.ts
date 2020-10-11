@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-inspector-dashboard',
   templateUrl: './inspector-dashboard.page.html',
@@ -7,11 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InspectorDashboardPage implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
 invoke():void{
   console.log('Success')
+}
+logout(){
+  this.router.navigate(['home']);
+ 
 }
 }

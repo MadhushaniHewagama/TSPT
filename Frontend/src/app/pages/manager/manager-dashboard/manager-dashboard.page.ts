@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-manager-dashboard',
   templateUrl: './manager-dashboard.page.html',
@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ManagerDashboardPage implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
@@ -15,4 +15,9 @@ export class ManagerDashboardPage implements OnInit {
  invoke():void{
     console.log('Success')
   }
+
+  logout(){
+    this.router.navigate(['home']);
+   
+}
 }
