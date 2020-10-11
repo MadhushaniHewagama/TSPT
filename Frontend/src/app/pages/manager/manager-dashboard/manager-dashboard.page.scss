@@ -50,6 +50,13 @@
                     text-align: center;
                 }
             }
+            ion-card-content{
+                img{
+                    height: 70px;
+                    width: 70px;
+                    margin-left: 140px;
+                }
+            }
         }
         ion-button{
             margin-left: 35%;
