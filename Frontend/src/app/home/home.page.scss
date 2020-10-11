@@ -1,26 +1,43 @@
+
+
 #loginpage{
+
     .login-bg {
-    // background-image: url(../../../assets/images/loginpage-bg.jpg);
+    // background-image: url(../../assets/images/bg1.jpg);
     background-position: bottom center;
     height: calc(100vh - 80px);
     background-repeat: no-repeat;
     background-size: contain;
+    background: rgb(215,0,16);
+    background: linear-gradient(0deg, rgba(215,0,16,1) 0%, rgba(255,255,255,1) 38%, rgba(240,219,220,1) 100%);
     }
    
-
+    .title-container{
+        
+        padding-top: 30px;
+        .text{
+            text-align: center;
+            margin-left: 80px;
+            color:  #d70010 ;
+            font-size: 20px;
+        }
+        
+    }
     .validate-btn{
+        margin-top: 100px;
         .button{
             //#ed1d24
             border: 1px solid #d70010 !important;
             border-radius: 4px;
             padding-left: 10px !important;
             background-color: transparent !important;
-            width: 200px !important;
+            width: 250px !important;
             background: transparent !important;
             margin: 0 auto;
             height: 50px;
             color: #d70010;
             text-shadow: none !important;
+            margin-top: 30px ;
             .button-native{
                 background-color: transparent !important;
                 background: transparent !important;
