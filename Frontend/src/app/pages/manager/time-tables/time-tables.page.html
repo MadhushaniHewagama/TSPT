@@ -1,9 +1,62 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>time-tables</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content id="loginpage">
+ 
+  <ion-content id="login-content">
+     <div class="login-bg"> 
+      <ion-card color="danger" id="login-user">
+        <img class="back-arrow" (click)="backClicked()"
+          [src]="'../../assets/images/back-arrow.png'">
+        <h1>Time Table</h1>
+      </ion-card>
 
-<ion-content>
+     
+      <ion-card class="card">
+        <ion-card-content>
+          <ion-grid>
+            <ion-row>
+              <ion-col>
+              Route
+              </ion-col>
+              <ion-col>
+                Departure location
+              </ion-col>
+              <ion-col>
+                Departure Time
+              </ion-col>
+              <ion-col>
+                Destination
+              </ion-col>
+              <ion-col>
+               Destination Time
+              </ion-col>
+            </ion-row>
+            <ion-virtual-scroll [items]="routes" approxItemHeight="100px">
+              <ion-list *virtualItem="let route;" class="tb-padding-none">
+                <ion-row>
+                  <ion-col>
+                    {{route.route_id}}
+                  </ion-col>
+                  <ion-col>
+                    {{route.start_loc}}
+                  </ion-col>
+                  <ion-col>
+                    {{route.s_time}}
+                  </ion-col>
+                  <ion-col>
+                    {{route.end_loc}}
+                  </ion-col>
+                  <ion-col>
+                    {{route.e_time}}
+                  </ion-col>
+                </ion-row>
+              </ion-list>
+             
+            </ion-virtual-scroll>
+          </ion-grid>
 
+</ion-card-content>
+
+</ion-card>
+</div>     
+  
+  
 </ion-content>

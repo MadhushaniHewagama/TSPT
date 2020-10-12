@@ -73,7 +73,7 @@ export const addCredit = (req: Request, res: Response) => {
 
 export const getTrips = (req: Request, res: Response) => {
   Mysql.getPool().query(
-    "select * from `tiket` WHERE `user_name` = " +`("${ req.params.user_name}") order by issued_time `,
+    "select tiket_id ,bus_id,start_loc,end_loc,fare,DATE_FORMAT(issued_time, '%Y/%m/%d %h:%m') as issued_time from `tiket` WHERE `user_name` = " +`("${ req.params.user_name}") order by issued_time `,
     (err: MysqlError, results: any) => {
       if (err) {
         res.status(500).json({ error: err });

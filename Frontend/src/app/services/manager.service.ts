@@ -30,6 +30,11 @@ export class ManagerService {
     const url = `${API_URL}/manager/reports`;
     return this.httpClient.get(url);
   }
+  public getRoutes(): Observable<any> {
+    const url = `${API_URL}/manager/time-table`;
+    return this.httpClient.get(url);
+  }
+  
 
   
 }
