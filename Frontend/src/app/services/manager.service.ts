@@ -17,4 +17,8 @@ export class ManagerService {
     const url = `${API_URL}/manager/view-user/${user_name}`;
     return this.httpClient.get(url);
   }
+  public getOverview(): Observable<any> {
+    const url = `${API_URL}/manager/overview`;
+    return this.httpClient.get(url);
+  }
 }
