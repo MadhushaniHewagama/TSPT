@@ -31,7 +31,9 @@ const routes: Routes = [
   { path: 'view-inspectors', loadChildren: './pages/manager/view-inspectors/view-inspectors.module#ViewInspectorsPageModule' },
   { path: 'view-users', loadChildren: './pages/manager/view-users/view-users.module#ViewUsersPageModule' },
   { path: 'manual-ticket', loadChildren: './pages/inspector/manual-ticket/manual-ticket.module#ManualTicketPageModule' },
-  { path: 'view-ticket', loadChildren: './pages/inspector/view-ticket/view-ticket.module#ViewTicketPageModule' }
+  { path: 'view-ticket', loadChildren: './pages/inspector/view-ticket/view-ticket.module#ViewTicketPageModule' },
+  { path: 'paymnet', loadChildren: './pages/user/paymnet/paymnet.module#PaymnetPageModule' },
+  { path: 'trips', loadChildren: './pages/user/trips/trips.module#TripsPageModule' }
 
 ];
 

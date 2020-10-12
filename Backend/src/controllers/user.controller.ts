@@ -48,3 +48,24 @@ export const getUser = (req: Request, res: Response) => {
     }
   );
 };
+
+
+export const addCredit = (req: Request, res: Response) => {
+
+  const user = req.params;
+  const user_name = user.user_name;
+  const credit=user.credit;
+  const addUserQuery =
+    "update user_profile set cost= " +
+    `"${credit}"`+"where user_name = "+`"${user_name}"`;
+  Mysql.getPool().query(addUserQuery, 
+    (err: MysqlError, results: any) => {
+    if (err) {
+      // console.log("Error", err);
+      res.status(500).json({ error: err });
+    } else {
+      res.json(results);
+    }
+  }
+  );
+};

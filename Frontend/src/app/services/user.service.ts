@@ -22,4 +22,8 @@ export class UserService {
     const url = `${API_URL}/user/profile/${user_name}`;
     return this.httpClient.get(url);
   }
+  public updateCredit(user_name: string,credit: string): Observable<any> {
+    const url = `${API_URL}/user/account/${user_name}/${credit}`;
+    return this.httpClient.put(url,{"user_name":user_name,"credit":credit});
+  }
 }
