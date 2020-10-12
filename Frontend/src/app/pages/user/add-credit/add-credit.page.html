@@ -1,9 +1,30 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>add-credit</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content id="loginpage">
+ 
+  <ion-content id="login-content">
+     <div class="login-bg"> 
+      <ion-card color="danger" id="login-user">
+        <img class="back-arrow" (click)="backClicked()"
+          [src]="'../../assets/images/back-arrow.png'">
+        <h1>Add Credit</h1>
+      </ion-card>
 
-<ion-content>
+      <ion-card class="card">
+          <ion-card-content>
+    
+    <form class="credit-form">
+      <ion-item>
+        <ion-label class="lbl-credit" position="floating">Floating Label</ion-label>
+        <ion-input></ion-input>
+      </ion-item>
+     
+    </form>
+    <ion-button color="danger" (click)="proceed()">Proceed
+    </ion-button>
+  </ion-card-content>
 
+</ion-card>
+</div>           
+  
+  
+  
 </ion-content>

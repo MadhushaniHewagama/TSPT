@@ -1,9 +1,21 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>paymnet</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content id="loginpage">
+ 
+  <ion-content id="login-content">
+     <div class="login-bg"> 
+      <ion-card color="danger" id="login-user">
+        <img class="back-arrow" (click)="backClicked()"
+          [src]="'../../assets/images/back-arrow.png'">
+        <h1>Payments</h1>
+      </ion-card>
 
-<ion-content>
-
-</ion-content>
+     </div> 
+    <form >
+        <ion-item>
+          <ion-label class="lbl-credit" position="fixed">Floating Label</ion-label>
+          <ion-input></ion-input>
+        </ion-item>
+       
+      </form>
+     
+     </ion-content>
+  </ion-content>   
