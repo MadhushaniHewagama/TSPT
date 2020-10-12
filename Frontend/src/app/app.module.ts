@@ -9,13 +9,15 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
-import {NgxQRCodeModule} from 'ngx-qrcode2';
-import {BarcodeScanner} from '@ionic-native/barcode-scanner';
+// import {NgxQRCodeModule} from 'ngx-qrcode2';
+// import {BarcodeScanner} from '@ionic-native/barcode-scanner';
 
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(),NgxQRCodeModule, AppRoutingModule,HttpClientModule],
+  imports: [BrowserModule, IonicModule.forRoot(),
+    // NgxQRCodeModule, 
+    AppRoutingModule,HttpClientModule],
   providers: [
     StatusBar,
     SplashScreen,
