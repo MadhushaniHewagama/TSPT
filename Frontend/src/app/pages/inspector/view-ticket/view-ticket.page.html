@@ -1,9 +1,38 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>view-ticket</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content id="loginpage">
+ 
+  <ion-content id="login-content">
+     <div class="login-bg"> 
+      <ion-card color="danger" id="login-user">
+        <img class="back-arrow" (click)="backClicked()"
+          [src]="'../../assets/images/back-arrow.png'">
+        <h1>View Tickets</h1>
+      </ion-card>
 
-<ion-content>
+      <ion-card class="card">
+          <ion-card-content>
+    <ion-virtual-scroll [items]="tickets" approxItemHeight="100px">
+        <ion-list *virtualItem="let ticket;" class="tb-padding-none">
+    <ion-item  class="slot-block">
+     
+    <ion-label class="recipient-name">
+        <p>Ticket ID : {{ticket.tiket_id}}</p>  
+        <p>Bus ID : {{ticket.bus_id}}</p>   
+        <p>Issued Time : {{ticket.issued_time}}</p>  
+        <p>Start Location : {{ticket.start_loc}}</p>  
+        <p>Destination : {{ticket.end_loc}}</p>
+        <p>Fare : {{ticket.fare}}</p>  
+        <p>Violated : {{ticket.violation}}</p>            
+    </ion-label>
+    
+    </ion-item>
+  </ion-list>
+    </ion-virtual-scroll>
+  
+  </ion-card-content>
 
+</ion-card>
+</div>           
+  
+  
+  
 </ion-content>

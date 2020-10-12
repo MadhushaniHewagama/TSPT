@@ -13,6 +13,7 @@ import { authRoutes } from '../routes/auth.route';
 import { adminRoutes } from '../routes/admin.route';
 import { testRoutes } from '../routes/test.route';
 import { managerRoutes } from '../routes/manager.route';
+import { inspectorRoutes } from '../routes/inspector.route';
 
 //config = require('./config');
 
@@ -66,6 +67,7 @@ const initializeServerRoutes = (app: Application, io: socketDotIO.Server) => {
   adminRoutes(app,io); // setting up admin routes
   testRoutes(app,io);
   managerRoutes(app,io);
+  inspectorRoutes(app,io);
 
 }
 
