@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-
-import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
 import { Router,NavigationExtras } from '@angular/router';
 import { LoadingService } from 'src/app/services/loading.service';

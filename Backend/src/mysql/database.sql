@@ -26,6 +26,7 @@ CREATE TABLE tiket (
   end_loc	  VARCHAR(150),
   fare DOUBLE,
   violation  boolean  DEFAULT 0 NOT NULL,
+  status boolean DEFAULT 0,
   PRIMARY KEY (tiket_id)
 );
 
@@ -77,24 +78,24 @@ insert into bus values (3,3,3,1);
 insert into bus values (4,4,4,1);
 insert into bus values (5,5,5,1);
 
-insert into tiket values (1,1,'2020-10-01 08:30:00','user1','u_s_loc1','u_e_loc1',20,0);
-insert into tiket values (2,2,'2020-10-02 11:00:00','user1','u_s_loc2','u_e_loc2',30,0);
-insert into tiket values (3,3,'2020-10-03 13:15:00','user1','u_s_loc3','u_e_loc3',40,0);
-insert into tiket values (4,4,'2020-10-04 14:10:00','user1','u_s_loc4','u_e_loc4',50,0);
-insert into tiket values (5,5,'2020-10-05 21:00:00','user1','u_s_loc5','u_e_loc5',60,0);
+insert into tiket values (1,1,'2020-10-01 08:30:00','user1','u_s_loc1','u_e_loc1',20,0,1);
+insert into tiket values (2,2,'2020-10-02 11:00:00','user1','u_s_loc2','u_e_loc2',30,0,1);
+insert into tiket values (3,3,'2020-10-03 13:15:00','user1','u_s_loc3','u_e_loc3',40,0,1);
+insert into tiket values (4,4,'2020-10-04 14:10:00','user1','u_s_loc4','u_e_loc4',50,0,1);
+insert into tiket values (5,5,'2020-10-05 21:00:00','user1','u_s_loc5','u_e_loc5',60,0,1);
 
-insert into tiket values (6,1,'2020-10-01 08:30:00','user2','u_s_loc1','u_e_loc1',20,0);
-insert into tiket values (7,2,'2020-10-02 11:00:00','user2','u_s_loc2','u_e_loc2',30,0);
-insert into tiket values (8,3,'2020-10-03 13:15:00','user2','u_s_loc3','u_e_loc3',40,0);
-insert into tiket values (9,4,'2020-10-05 21:00:00','user2','u_s_loc4','u_e_loc4',50,0);
+insert into tiket values (6,1,'2020-10-01 08:30:00','user2','u_s_loc1','u_e_loc1',20,0,1);
+insert into tiket values (7,2,'2020-10-02 11:00:00','user2','u_s_loc2','u_e_loc2',30,0,1);
+insert into tiket values (8,3,'2020-10-03 13:15:00','user2','u_s_loc3','u_e_loc3',40,0,1);
+insert into tiket values (9,4,'2020-10-05 21:00:00','user2','u_s_loc4','u_e_loc4',50,0,1);
 
-insert into tiket values (10,1,'2020-10-01 08:30:00','user3','u_s_loc1','u_e_loc1',20,0);
-insert into tiket values (11,2,'2020-10-02 11:00:00','user3','u_s_loc2','u_e_loc2',30,0);
-insert into tiket values (12,3,'2020-10-03 13:15:00','user3','u_s_loc3','u_e_loc3',40,0);
+insert into tiket values (10,1,'2020-10-01 08:30:00','user3','u_s_loc1','u_e_loc1',20,0,1);
+insert into tiket values (11,2,'2020-10-02 11:00:00','user3','u_s_loc2','u_e_loc2',30,0,1);
+insert into tiket values (12,3,'2020-10-03 13:15:00','user3','u_s_loc3','u_e_loc3',40,0,1);
 
-insert into tiket values (13,1,'2020-10-01 08:30:00','user4','u_s_loc1','u_e_loc1',20,0);
-insert into tiket values (14,2,'2020-10-02 11:00:00','user4','u_s_loc2','u_e_loc2',30,0);
+insert into tiket values (13,1,'2020-10-01 08:30:00','user4','u_s_loc1','u_e_loc1',20,0,1);
+insert into tiket values (14,2,'2020-10-02 11:00:00','user4','u_s_loc2','u_e_loc2',30,0,1);
 
-insert into tiket values (15,2,'2020-10-01 08:30:00','user5','u_s_loc1','u_e_loc1',20,0);
+insert into tiket values (15,2,'2020-10-01 08:30:00','user5','u_s_loc1','u_e_loc1',20,0,0);
 
 

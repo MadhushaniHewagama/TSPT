@@ -1,3 +1,105 @@
+<ion-content id="loginpage">
+  <ion-content id="login-content">
+    <div class="login-bg"> 
+    <ion-card color="danger" id="login-user">
+     
+        <h1>Create Account</h1>
+    </ion-card>
+  
+    <ion-card class="card">
+      <ion-card-content>
+        
+        <!--User Registration form -->
+        <form [formGroup]="token_form">
+          <ion-label class="lbl-user_name" floating>
+            Start Location:
+          </ion-label>
+          <ion-item>
+            
+            <ion-input type="text" formControlName="start_loc" inputmode="text" ></ion-input>
+          </ion-item>
+          <div class="error-message"
+            *ngIf="token_form.controls.start_loc.errors && (token_form.controls.start_loc.dirty||token_form.controls.start_loc.touched)">
+            <p class="error-msg" *ngIf="token_form.controls.start_loc.errors.required" style="color:red">Start Location 
+              is
+              required</p>
+            </div>
+
+            <ion-label class="lbl-user_name" floating>
+              Designation:
+            </ion-label>
+            <ion-item>
+              
+              <ion-input type="text" formControlName="end_loc" inputmode="text" ></ion-input>
+            </ion-item>
+            <div class="error-message"
+              *ngIf="token_form.controls.end_loc.errors && (token_form.controls.end_loc.dirty||token_form.controls.end_loc.touched)">
+              <p class="error-msg" *ngIf="token_form.controls.end_loc.errors.required" style="color:red">Designation 
+                is
+                required</p>
+              </div>
+          
+
+              <ion-label class="lbl-user_name" floating>
+                Fare:
+              </ion-label>
+              <ion-item>
+                
+                <ion-input type="text" formControlName="fare" inputmode="text" ></ion-input>
+              </ion-item>
+              <div class="error-message"
+                *ngIf="token_form.controls.fare.errors && (token_form.controls.fare.dirty||token_form.controls.fare.touched)">
+                <p class="error-msg" *ngIf="token_form.controls.fare.errors.required" style="color:red">Fare 
+                  is
+                  required</p>
+                </div>
+
+                <ion-label class="lbl-user_name" floating>
+                  Bus ID:
+                </ion-label>
+                <ion-item>
+                  
+                  <ion-input type="text" formControlName="bus_id" inputmode="text" ></ion-input>
+                </ion-item>
+                <div class="error-message"
+                  *ngIf="token_form.controls.bus_id.errors && (token_form.controls.bus_id.dirty||token_form.controls.bus_id.touched)">
+                  <p class="error-msg" *ngIf="token_form.controls.bus_id.errors.required" style="color:red">Bus ID 
+                    is
+                    required</p>
+                  </div>
+                    
+          
+        </form>
+        <ion-button color="success" item-end (click)="create_qr()" [disabled]="!token_form.valid">Create QR Code
+        </ion-button>
+        <ion-button color="danger" item-end (click)="end_trip()" [disabled]="!qr_created">End Trip
+        </ion-button>
+  
+      </ion-card-content>
+    </ion-card>
+  </div>
+  </ion-content>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!-- <ion-header>
   <ion-toolbar>
     <ion-title>request-token</ion-title>

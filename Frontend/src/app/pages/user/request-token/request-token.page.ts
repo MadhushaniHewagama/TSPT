@@ -1,21 +1,114 @@
-import { Component, OnInit } from '@angular/core';
-// import{BarcodeScanner} from '@ionic-native'
+import { Component, OnInit } from "@angular/core";
+import { FormGroup, Validators, FormControl } from "@angular/forms";
+
+import { NavController } from "@ionic/angular";
+import { Router } from "@angular/router";
+// import { ErrorMessageService } from 'src/app/services/error-message.service';
+import { ToastController } from '@ionic/angular';
+import { LoadingService } from 'src/app/services/loading.service';
+import { UserService } from 'src/app/services/user.service';
+import { User } from "src/app/models/user";
+import { DataService } from 'src/app/services/data.service';
+
 @Component({
   selector: 'app-request-token',
   templateUrl: './request-token.page.html',
   styleUrls: ['./request-token.page.scss'],
 })
 export class RequestTokenPage implements OnInit {
-
+  public token_form: FormGroup;
+  public _formInvalid = false;
+  public qr_obj:any;
+  qr_created:boolean=false;
 //   constructor(private barcodeScanner: BarcodeScanner) { }
 //   start_loc: any=null;
 //   end_loc:any=null;
 //   cost:any=null;
 //   createdCode=null;
 //   scannedCode=null;
-  ngOnInit() {
-  }
+constructor(
+  private user_service: UserService,
+  public nav: NavController,
+  public loading: LoadingService,
+  public dataService:DataService,
+  // public errorMessageServe: ErrorMessageService,
+  public toastController: ToastController,
+  private router: Router
+) {}
+
+ngOnInit() {    
+  this.createForm();
+}
+back(): void {
+  this.nav.back();
+}
+
+createForm(): void {
+  this.token_form = new FormGroup({
+    start_loc: new FormControl("", [
+      Validators.required
+    ]),
+    end_loc: new FormControl("", [
+      Validators.required
+    ]),
+    fare: new FormControl("", [
+      Validators.required
+    ]),
+    bus_id: new FormControl("", [Validators.required])
+
+  });
+}
+create_qr(): void {
+  this.loading.present();
+  this.qr_obj = this.token_form.value;
+  this.qr_created=true;
+  this.qr_obj['user_name']=this.dataService.getUserName();
   
+  this.user_service.getCredit(this.dataService.getUserName()).subscribe(
+    res => {
+      const credit=parseFloat(res[0]['credit']) ;
+      if(credit< parseFloat(this.qr_obj['fare'])){
+        this.qr_obj['violation']=1;
+      }else{
+        this.qr_obj['violation']=0;
+      }
+      this.user_service.createQR(this.qr_obj).subscribe(
+        res => {
+          // this.events.publish('user:added');
+          // this.errorMessage=""
+          // this.errorMessageServe.showMessage((' successfully'),this.errorMessage,'success');
+      
+          // this.router.navigate(["/admin-dashbord/users"]);
+          console.log("qr success");
+          console.log(JSON.stringify(res[0]));
+          this.loading.dismiss();
+        
+        },
+        err => {
+          // this.errorMessage="SSOID or Email already exist!!!"
+          // this.errorMessageServe.showMessage("Please check your SSO ID or Email and try again!!",this.errorMessage,'danger');
+          this.loading.dismiss();
+        }
+      );
+    },
+    err => {
+      // this.errorMessage="SSOID or Email already exist!!!"
+      // this.errorMessageServe.showMessage("Please check your SSO ID or Email and try again!!",this.errorMessage,'danger');
+      this.loading.dismiss();
+    }
+  );
+    
+    
+  
+}
+
+
+
+
+
+
+
+
 //   createCode(){
 //     this.createdCode=this.start_loc;
 //   }

@@ -31,4 +31,14 @@ export class UserService {
     const url = `${API_URL}/user/view-trips/${user_name}`;
     return this.httpClient.get(url);
   }
+
+  public createQR(qr_obj:any): Observable<any> {
+    console.log(JSON.stringify(qr_obj))
+    const url = `${API_URL}/user/qr/${qr_obj.start_loc}/${qr_obj.end_loc}/${qr_obj.fare}/${qr_obj.bus_id}/${qr_obj.user_name}/${qr_obj.violation}`;
+    return this.httpClient.post(url,qr_obj);
+  }
+  public getCredit(user_name: string): Observable<any> {
+    const url = `${API_URL}/user/qr/${user_name}`;
+    return this.httpClient.get(url);
+  }
 }
