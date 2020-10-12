@@ -1,9 +1,66 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>account</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-toolbar color="danger" id="user-profile-header">
+  <ion-card-content>
+    <ion-item color="danger" lines="none">
+      <img class="back-arrow" (click)="backClicked()" [src]="'../../assets/images/back-arrow.png'">
+      Account Details
+    </ion-item>
+  </ion-card-content>
+</ion-toolbar>
 
-<ion-content>
+<!-- -->
+<ion-content padding id="user-profile-content">
 
+  <div class="body-content">
+    <div class="header-content">
+      <ion-input type="text" readonly style="text-align: center; display: block; line-height: 25px;">
+        {{profile.user_name}}</ion-input>
+    </div>
+    <!-- Registration form -->
+    <form class="list-form">
+      <ion-item lines="none">
+        <ion-label floating class="label-ash">
+
+          User Name
+        </ion-label>
+        <ion-input type="number" readonly class="profilepage-ion-input">{{profile.user_name}}</ion-input>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-label floating class="label-ash">
+
+          User Name
+        </ion-label>
+        <ion-input type="number" readonly class="profilepage-ion-input">{{profile.user_name}}</ion-input>
+      </ion-item>
+<!-- 
+      <ion-item lines="none">
+        <ion-label floating class="label-ash">
+          First Name
+        </ion-label>
+        <ion-input type="text" readonly class="profilepage-ion-input">{{profile.first_name}}</ion-input>
+      </ion-item>
+
+      <ion-item lines="none">
+        <ion-label floating class="label-ash">
+
+          Last Name
+        </ion-label>
+        <ion-input type="text" readonly class="profilepage-ion-input">{{profile.last_name}}</ion-input>
+      </ion-item> -->
+
+      <!-- <ion-item lines="none">
+        <ion-label floating class="label-ash">
+          Email
+        </ion-label>
+        <ion-input type="email" readonly class="profilepage-ion-input">{{profile.email}}</ion-input>
+      </ion-item> -->
+      <!-- <ion-item lines="none">
+        <ion-label floating class="label-ash">
+          Privilege
+        </ion-label>
+        <ion-input type="email" readonly class="profilepage-ion-input">{{ profile.privilege?"Admin":"User" }}
+        </ion-input>
+      </ion-item> -->
+      
+    </form>
+  </div>
 </ion-content>

@@ -7,6 +7,7 @@ import { LoadingService } from '../../services/loading.service';
 // import { ErrorMessageService } from 'src/app/services/error-message.service';
 import { NavController } from "@ionic/angular";
 import { FormGroup, Validators, FormControl } from "@angular/forms";
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-login',
@@ -25,6 +26,7 @@ export class LoginPage implements OnInit {
     public toastController: ToastController,
     // private userService: UserService,
     private authService: AuthService,
+    private dataService:DataService,
     // public errorMessageServe: ErrorMessageService,
     private route: ActivatedRoute,
     private router: Router,
@@ -68,6 +70,7 @@ export class LoginPage implements OnInit {
         // console.log(res.privilege===1);
         try{
           if(res[0].password==this.login_user_form.controls.password.value){
+            this.dataService.setUserName(this.login_user_form.controls.user_name.value);
             if (res[0].privilege === 0) {
               const navigationExtras: NavigationExtras = {
                 state: {
