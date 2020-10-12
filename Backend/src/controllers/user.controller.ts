@@ -69,3 +69,17 @@ export const addCredit = (req: Request, res: Response) => {
   }
   );
 };
+
+
+export const getTrips = (req: Request, res: Response) => {
+  Mysql.getPool().query(
+    "select * from `tiket` WHERE `user_name` = " +`("${ req.params.user_name}")`,
+    (err: MysqlError, results: any) => {
+      if (err) {
+        res.status(500).json({ error: err });
+      } else {
+        res.json(results);
+      }
+    }
+  );
+};

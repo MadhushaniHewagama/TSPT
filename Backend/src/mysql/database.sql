@@ -21,21 +21,39 @@ CREATE TABLE tiket (
   tiket_id INT NOT NULL AUTO_INCREMENT,
   bus_id INT,
   user_name VARCHAR(150),
-  time_stamp_start  	datetime,
-  time_stamp_end	  datetime,
+  start_loc  	VARCHAR(150),
+  end_loc	  VARCHAR(150),
+  fare DOUBLE,
   violation  boolean  DEFAULT 0 NOT NULL,
   PRIMARY KEY (tiket_id)
 );
 
-
 CREATE TABLE bus(
   bus_id INT NOT NULL AUTO_INCREMENT,
-  bus_route VARCHAR(150),
+  route_id INT,
   inspector VARCHAR(15),
   available  boolean  DEFAULT 1 NOT NULL,
   PRIMARY KEY (bus_id)
 );
 
+CREATE TABLE bus_route(
+  route_id INT NOT NULL AUTO_INCREMENT,
+  start_loc  	VARCHAR(150),
+  end_loc	  VARCHAR(150),
+  cost_per_unit DOUBLE,
+  PRIMARY KEY (route_id)
+);
+
+insert into user_profile values ("user1","196765435V","0700090809","user1@gmail.com",0);
+insert into login_data values ("user1","user1",0);
+insert into user_profile values ("user2","196765435V","0700090809","user2@gmail.com",0);
+insert into login_data values ("user2","user2",0);
+insert into user_profile values ("user3","196765435V","0700090809","user3@gmail.com",0);
+insert into login_data values ("user3","user3",0);
+insert into user_profile values ("user4","196765435V","0700090809","user4@gmail.com",0);
+insert into login_data values ("user4","user4",0);
+insert into user_profile values ("user5","196765435V","0700090809","user5@gmail.com",0);
+insert into login_data values ("user5","user5",0);
 insert into login_data values ("manager1",'manager1',2);
 insert into login_data values ("manager2",'manager2',2);
 insert into login_data values ("inspector1",'inspector1',1);
@@ -43,4 +61,38 @@ insert into login_data values ("inspector2",'inspector2',1);
 insert into login_data values ("inspector3",'inspector3',1);
 insert into login_data values ("inspector4",'inspector4',1);
 insert into login_data values ("inspector5",'inspector5',1);
+
+insert into bus_route values (1,'s_loc1','e_loc1',10.5);
+insert into bus_route values (2,'s_loc2','e_loc2',20.5);
+insert into bus_route values (3,'s_loc3','e_loc3',30.5);
+insert into bus_route values (4,'s_loc4','e_loc4',40.5);
+insert into bus_route values (5,'s_loc5','e_loc5',50.5);
+
+insert into bus values (1,1,1,1);
+insert into bus values (2,2,2,1);
+insert into bus values (3,3,3,1);
+insert into bus values (4,4,4,1);
+insert into bus values (5,5,5,1);
+
+insert into tiket values (1,1,'user1','u_s_loc1','u_e_loc1',20,0);
+insert into tiket values (2,2,'user1','u_s_loc2','u_e_loc2',30,0);
+insert into tiket values (3,3,'user1','u_s_loc3','u_e_loc3',40,0);
+insert into tiket values (4,4,'user1','u_s_loc4','u_e_loc4',50,0);
+insert into tiket values (5,5,'user1','u_s_loc5','u_e_loc5',60,0);
+
+insert into tiket values (6,1,'user2','u_s_loc1','u_e_loc1',20,0);
+insert into tiket values (7,2,'user2','u_s_loc2','u_e_loc2',30,0);
+insert into tiket values (8,3,'user2','u_s_loc3','u_e_loc3',40,0);
+insert into tiket values (9,4,'user2','u_s_loc4','u_e_loc4',50,0);
+
+insert into tiket values (10,1,'user3','u_s_loc1','u_e_loc1',20,0);
+insert into tiket values (11,2,'user3','u_s_loc2','u_e_loc2',30,0);
+insert into tiket values (12,3,'user3','u_s_loc3','u_e_loc3',40,0);
+
+insert into tiket values (13,1,'user4','u_s_loc1','u_e_loc1',20,0);
+insert into tiket values (14,2,'user4','u_s_loc2','u_e_loc2',30,0);
+
+insert into tiket values (15,2,'user5','u_s_loc1','u_e_loc1',20,0);
+
+
 

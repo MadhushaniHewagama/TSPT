@@ -1,9 +1,36 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>trips</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content id="loginpage">
+ 
+  <ion-content id="login-content">
+     <div class="login-bg"> 
+      <ion-card color="danger" id="login-user">
+        <img class="back-arrow" (click)="backClicked()"
+          [src]="'../../assets/images/back-arrow.png'">
+        <h1>Trip Details </h1>
+      </ion-card>
 
-<ion-content>
+      <ion-card class="card">
+          <ion-card-content>
+    <ion-virtual-scroll [items]="trips" approxItemHeight="100px">
+        <ion-list *virtualItem="let trip;" class="tb-padding-none">
+    <ion-item  class="slot-block">
+     
+      <ion-label class="recipient-name">
+        <p>Tiket ID : {{trip.ticket_id}}</p>
+        <p>Bus ID : {{trip.bus_id}}</p>
+        <p>Start Location :{{trip.start_loc}}</p>
+        <p>End Location : {{trip.end_loc}}</p>
+        <p>Fare : {{fare}}</p>    
+    
+    </ion-label>
+    </ion-item>
+  </ion-list>
+    </ion-virtual-scroll>
+  
+  </ion-card-content>
 
+</ion-card>
+</div>           
+  
+  
+  
 </ion-content>

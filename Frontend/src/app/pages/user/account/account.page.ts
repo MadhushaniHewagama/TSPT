@@ -4,6 +4,7 @@ import { UserService } from 'src/app/services/user.service';
 import { DataService } from 'src/app/services/data.service';
 import { NavController } from '@ionic/angular';
 import { LoadingService } from '../../../services/loading.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-account',
@@ -12,7 +13,7 @@ import { LoadingService } from '../../../services/loading.service';
 })
 export class AccountPage implements OnInit {
   public profile: any={user_name:'',nic:'',phone_number:'',email:'',credit:''};
-  constructor(private userService: UserService,public navCtrl: NavController,public loading: LoadingService,private dataService: DataService) {
+  constructor(private userService: UserService,public navCtrl: NavController,public loading: LoadingService,private dataService: DataService,private router: Router) {
    
    }
 
@@ -37,5 +38,9 @@ export class AccountPage implements OnInit {
   backClicked() {
     this.navCtrl.back();
   }
-
+  viewTrips(){
+    this.loading.present();
+    this.router.navigate(['trips']);
+    this.loading.dismiss();
+  }
 }
