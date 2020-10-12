@@ -1,9 +1,31 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>view-inspectors</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content id="loginpage">
+ 
+  <ion-content id="login-content">
+     <div class="login-bg"> 
+      <ion-card color="danger" id="login-user">
+        <img class="back-arrow" (click)="backClicked()"
+          [src]="'../../assets/images/back-arrow.png'">
+        <h1>View Inspectors</h1>
+      </ion-card>
 
-<ion-content>
+      <ion-card class="card">
+          <ion-card-content>
+    <ion-virtual-scroll [items]="inspectors" approxItemHeight="100px">
+        <ion-list *virtualItem="let inspector;" class="tb-padding-none">
+    <ion-item  class="slot-block">
+     
+      <ion-label class="recipient-name">
+        <p>Inspector Name : {{inspector.user_name}}</p>            
+    </ion-label>
+    </ion-item>
+  </ion-list>
+    </ion-virtual-scroll>
+  
+  </ion-card-content>
 
+</ion-card>
+</div>           
+  
+  
+  
 </ion-content>

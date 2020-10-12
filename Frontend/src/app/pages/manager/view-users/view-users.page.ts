@@ -3,7 +3,6 @@ import { ManagerService } from 'src/app/services/manager.service';
 import { NavController } from '@ionic/angular';
 import { Router,NavigationExtras } from '@angular/router';
 import { LoadingService } from 'src/app/services/loading.service';
-import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-view-users',
@@ -12,7 +11,7 @@ import { DataService } from 'src/app/services/data.service';
 })
 export class ViewUsersPage implements OnInit {
 
-  constructor(private managerService: ManagerService,public navCtrl: NavController,public loading: LoadingService,private dataService: DataService,private router: Router) { }
+  constructor(private managerService: ManagerService,public navCtrl: NavController,public loading: LoadingService, private router: Router) { }
   public users:any;
   ngOnInit() {
     this.loadUsers();

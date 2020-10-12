@@ -21,4 +21,12 @@ export class ManagerService {
     const url = `${API_URL}/manager/overview`;
     return this.httpClient.get(url);
   }
+
+  public getInspector(): Observable<any> {
+    const url = `${API_URL}/manager/view-inspectors`;
+    return this.httpClient.get(url);
+  }
+
+
+  
 }

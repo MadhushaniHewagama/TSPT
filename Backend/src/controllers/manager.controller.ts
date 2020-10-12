@@ -89,5 +89,17 @@ export const getUsers = (req: Request, res: Response) => {
       }
     );
   };
-  
+
+  export const getInspectors = (req: Request, res: Response) => {
+    Mysql.getPool().query(
+      "select user_name from `login_data` where privilege = 1;",
+      (err: MysqlError, results: any) => {
+        if (err) {
+          res.status(500).json({ error: err });
+        } else {
+          res.json(results);
+        }
+      }
+    );
+  };
   
