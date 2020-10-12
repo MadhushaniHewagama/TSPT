@@ -1,7 +1,7 @@
 #loginpage{
     
     .login-bg{
-        height: auto;
+        height: 100%;
         background-repeat: no-repeat;
         background: rgb(215,0,16);
         background: linear-gradient(0deg, rgba(215,0,16,5) 0%, rgba(255,255,255,1) 38%, rgba(240,219,220,1) 100%);
@@ -16,8 +16,19 @@
 
 
     }
-  
-    a{
+    #p{
+        margin-left: 100px;
+    }
+    #q{
+        margin-left: 150px;
+    }
+    #r{
+        margin-left: 74px;
+    }
+    #s{
+        margin-left: 140px;
+    }
+    #t{
         margin-left: 160px;
     }
     ion-button{
@@ -45,7 +56,6 @@
         display: inline-block;
 
     }
-    
 
 
 }

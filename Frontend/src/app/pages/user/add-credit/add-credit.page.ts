@@ -36,7 +36,7 @@ proceed():void{
   this.router.navigate(['paymnet'],navigationExtras);
   this.loading.dismiss();
 }
-back(): void {
+backClicked(): void {
   this.router.navigate(['user-dashboard']);
 }
 }

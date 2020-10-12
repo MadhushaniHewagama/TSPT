@@ -98,4 +98,3 @@ insert into tiket values (14,2,'2020-10-02 11:00:00','user4','u_s_loc2','u_e_loc
 insert into tiket values (15,2,'2020-10-01 08:30:00','user5','u_s_loc1','u_e_loc1',20,0);
 
 
-

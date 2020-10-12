@@ -33,7 +33,8 @@ const routes: Routes = [
   { path: 'manual-ticket', loadChildren: './pages/inspector/manual-ticket/manual-ticket.module#ManualTicketPageModule' },
   { path: 'view-ticket', loadChildren: './pages/inspector/view-ticket/view-ticket.module#ViewTicketPageModule' },
   { path: 'paymnet', loadChildren: './pages/user/paymnet/paymnet.module#PaymnetPageModule' },
-  { path: 'trips', loadChildren: './pages/user/trips/trips.module#TripsPageModule' }
+  { path: 'trips', loadChildren: './pages/user/trips/trips.module#TripsPageModule' },
+  { path: 'view-user', loadChildren: './pages/manager/view-user/view-user.module#ViewUserPageModule' }
 
 ];
 

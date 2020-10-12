@@ -1,0 +1,56 @@
+ 
+<!-- -->
+<ion-content id="loginpage">
+ 
+  <ion-content id="login-content">
+     <div class="login-bg"> 
+      <ion-card color="danger" id="login-user">
+        <img class="back-arrow" (click)="backClicked()"
+          [src]="'../../assets/images/back-arrow.png'">
+        <h1>View Passenger Info </h1>
+      </ion-card>
+
+      <ion-card class="card">
+          <ion-card-content>
+    <form class="list-form">
+      <ion-item lines="none">
+        <ion-label floating class="label-ash" >
+
+          User Name
+        </ion-label>
+        <ion-input type="number" readonly class="profilepage-ion-input" id="p">{{user.user_name}}</ion-input>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-label floating class="label-ash">
+
+         NIC
+        </ion-label>
+        <ion-input type="number" readonly class="profilepage-ion-input" id="q">{{user.nic}}</ion-input>
+      </ion-item>
+      
+      <ion-item lines="none">
+        <ion-label floating class="label-ash">
+
+         Last Travel Date
+        </ion-label>
+        <ion-input type="number" readonly class="profilepage-ion-input" id="r">{{user.last_date}}</ion-input>
+      </ion-item>
+
+      <ion-item lines="none">
+        <ion-label floating class="label-ash">
+          Last Travel time
+        </ion-label>
+        <ion-input type="number" readonly class="profilepage-ion-input" id="s">{{user.last_time}}</ion-input>
+      </ion-item>
+      
+
+    </form>
+
+  </ion-card-content>
+
+</ion-card>
+</div>           
+  
+  
+  
+</ion-content>
