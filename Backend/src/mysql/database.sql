@@ -19,10 +19,10 @@ CREATE TABLE user_profile (
 
 CREATE TABLE tiket (
   tiket_id INT NOT NULL AUTO_INCREMENT,
+  bus_id INT,
   user_name VARCHAR(150),
   time_stamp_start  	datetime,
   time_stamp_end	  datetime,
-  location VARCHAR(150),
   violation  boolean  DEFAULT 0 NOT NULL,
   PRIMARY KEY (tiket_id)
 );
@@ -30,7 +30,7 @@ CREATE TABLE tiket (
 
 CREATE TABLE bus(
   bus_id INT NOT NULL AUTO_INCREMENT,
-  location VARCHAR(150),
+  bus_route VARCHAR(150),
   inspector VARCHAR(15),
   available  boolean  DEFAULT 1 NOT NULL,
   PRIMARY KEY (bus_id)
