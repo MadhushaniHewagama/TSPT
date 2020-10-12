@@ -17,7 +17,6 @@ export class OverviewPage implements OnInit {
     this.loadData();
   }
   loadData() {
-    this.loading.present();
     this.managerService.getOverview().subscribe(
       res =>{
         this.data=res;

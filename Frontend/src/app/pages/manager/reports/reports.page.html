@@ -1,9 +1,62 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>reports</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content id="loginpage">
+ 
+  <ion-content id="login-content">
+     <div class="login-bg"> 
+      <ion-card color="danger" id="login-user">
+        <img class="back-arrow" (click)="backClicked()"
+          [src]="'../../assets/images/back-arrow.png'">
+        <h1>Report of Tickets Data</h1>
+      </ion-card>
 
-<ion-content>
+     
+      <ion-card class="card">
+        <ion-card-content>
+          <ion-grid>
+            <ion-row>
+              <ion-col>
+               Ticket ID
+              </ion-col>
+              <ion-col>
+                Bus ID
+              </ion-col>
+              <ion-col>
+                Fare
+              </ion-col>
+              <ion-col>
+               Time
+              </ion-col>
+              <ion-col>
+                Violated
+              </ion-col>
+            </ion-row>
+            <ion-virtual-scroll [items]="tickets" approxItemHeight="100px">
+              <ion-list *virtualItem="let ticket;" class="tb-padding-none">
+                <ion-row>
+                  <ion-col>
+                    {{ticket.tiket_id}}
+                  </ion-col>
+                  <ion-col>
+                    {{ticket.bus_id}}
+                  </ion-col>
+                  <ion-col>
+                    {{ticket.fare}}
+                  </ion-col>
+                  <ion-col>
+                    {{ticket.issued_time}}
+                  </ion-col>
+                  <ion-col>
+                    {{ticket.violation}}
+                  </ion-col>
+                </ion-row>
+              </ion-list>
+             
+            </ion-virtual-scroll>
+          </ion-grid>
 
+</ion-card-content>
+
+</ion-card>
+</div>     
+  
+  
 </ion-content>
