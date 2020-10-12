@@ -11,14 +11,23 @@
       <ion-card class="card">
           <ion-card-content>
     
-    <form class="credit-form">
-      <ion-item>
-        <ion-label class="lbl-credit" position="floating">Floating Label</ion-label>
-        <ion-input></ion-input>
+    <form class="credit-form"  [formGroup]="credit_form">
+      <ion-label class="lbl-credit" floating>Select Amount</ion-label>
+      <ion-item>       
+        <ion-input formControlName="credit" placeholder="amount"></ion-input>
       </ion-item>
-     
+      
+      <ion-item>
+        <ion-label>Payment Method</ion-label>
+        <ion-select  okText=Select cancelText="Cancel" >
+          <ion-select-option value="0">Credit Card</ion-select-option>
+          <ion-select-option value="1">Debit Card</ion-select-option> 
+          <ion-select-option value="2">Master Card</ion-select-option>   
+          <ion-select-option value="3">Visa Card</ion-select-option>        
+        </ion-select>
+      </ion-item>
     </form>
-    <ion-button color="danger" (click)="proceed()">Proceed
+    <ion-button color="danger" (click)="proceed()" [disabled]="!credit_form.valid">Proceed
     </ion-button>
   </ion-card-content>
 

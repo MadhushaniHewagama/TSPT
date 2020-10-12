@@ -5,17 +5,45 @@
       <ion-card color="danger" id="login-user">
         <img class="back-arrow" (click)="backClicked()"
           [src]="'../../assets/images/back-arrow.png'">
-        <h1>Payments</h1>
+        <h1>Payment</h1>
       </ion-card>
 
-     </div> 
-    <form >
-        <ion-item>
-          <ion-label class="lbl-credit" position="fixed">Floating Label</ion-label>
-          <ion-input></ion-input>
-        </ion-item>
-       
-      </form>
-     
-     </ion-content>
-  </ion-content>   
+      <ion-card class="card">
+          <ion-card-content>
+    
+    <form class="credit-form"  >
+      <ion-label class="lbl-credit" >Card No</ion-label>
+      <ion-item>       
+        <ion-input  placeholder="card no"></ion-input>
+      </ion-item>
+
+      <ion-label class="lbl-credit" >Name</ion-label>
+      <ion-item>       
+        <ion-input  placeholder="name"></ion-input>
+      </ion-item>
+      
+      <ion-label class="lbl-credit" >Valid Thru</ion-label>
+      <ion-item>       
+        <ion-input  placeholder="valid thru"></ion-input>
+      </ion-item>
+
+      <ion-label class="lbl-credit" >CVC</ion-label>
+      <ion-item>       
+        <ion-input  placeholder="CVC"></ion-input>
+      </ion-item>
+
+      <ion-label class="lbl-credit" >Amount</ion-label>
+      <ion-item>       
+        <ion-input readonly >{{amount}}</ion-input>
+      </ion-item>
+    </form>
+    <ion-button color="danger" (click)="pay()" >Pay
+    </ion-button>
+  </ion-card-content>
+
+</ion-card>
+</div>           
+  
+  
+  
+</ion-content>
