@@ -1,73 +1,43 @@
-#user-profile-header{
-    .item-inner {
-        --padding-right: 0px!important;
-     }
-    div.animated.fadeInDown {
-        width: 44px;
-        margin: 0 auto;
-        img{
-            width: 60px !important;
-            height: 60px!important;
+#loginpage{
+    
+    .login-bg{
+        height: 100%;
+        background-repeat: no-repeat;
+        background: rgb(215,0,16);
+        background: linear-gradient(0deg, rgba(215,0,16,5) 0%, rgba(255,255,255,1) 38%, rgba(240,219,220,1) 100%);
+    }
+    ion-toolbar{
+        ion-textarea{
+            margin: 10px 0 !important;
         }
     }
-    .cam-btn{
-        --background: transparent !important;
-        --box-shadow: none !important;
+    ion-input{
+        margin-left: 25%;
     }
-    .cam-icon{
-        width: 26px;
-        height: 21px;
+    ion-button{
+        margin-left: 30%;
     }
-}
-#user-profile-content{
-    //#d60034
-    top: -16px !important;
-    --background: #d70010;
-    background: -moz-linear-gradient(top, #d70010 0%, #d70010 12%, #ebebeb 12%, #ebebeb 100%);
-    --background: -webkit-linear-gradient(top, #d70010 0%,#d70010 12%,#ebebeb 12%,#ebebeb 100%);
-    --background: linear-gradient(to bottom, #d70010 0%,#d70010 12%,#ebebeb 12%,#ebebeb 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d60034', endColorstr='#ebebeb',GradientType=0 );
-    .body-content {
-        background: #fff;
-        .header-content {
-            padding-left: 0px;
-            padding-top: 12px;
-            ion-input{
-                text-align: center;
-                input {
-                    padding: 0px !important;
-                }
-            }
-        }
+    .back-arrow{
+        width: 14px !important;
+        height: 24px !important;
+        float: left;
+        display: inline-block;
+        margin-left: 20px;
+        margin-top: 14px;
+        margin-bottom: 14px;
     }
-    .label-ash{
-        --color: #727272 !important;
-        min-width: 100px;
-        margin-top: 0;
-        margin-bottom: 0;
-        font-size: 14px;
+    .card{
+        margin-top: 15%;
+        background: white !important;
+        margin-left:5%;
+        margin-right: 5%;
     }
-    .label-ash-min{
-       // @extend .label-ash;
-       --color: #727272 !important;
-       min-width: 200px;
-       margin-top: 0;
-       margin-bottom: 0;
-       font-size: 14px;
-    }
-    .profilepage-ion-input{
-        font-size: 14px;
-    }
-    .active-status{
-        width: 10px;
-        height: 10px;
-        border-radius: 50%;
-        background-color: #0cee07;
-        margin-left: 5px;
+    h1{
+        margin-left: 50px;
+        margin-top: 14px;
+        margin-bottom: 14px;
+        display: inline-block;
+
     }
 }
-#col-padding-none{
-    ion-col{
-        padding: 0px 0px 0px 10px !important;
-    }
-}
+

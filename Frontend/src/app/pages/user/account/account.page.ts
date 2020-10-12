@@ -24,10 +24,12 @@ export class AccountPage implements OnInit {
     this.userService.getProfile(user_name).subscribe(
       res =>{
         this.profile=res[0];
+        console.log(res[0])
         this.loading.dismiss();
       },
       err => {
         this.loading.dismiss();
+        console.log(err);
       }
     );
     

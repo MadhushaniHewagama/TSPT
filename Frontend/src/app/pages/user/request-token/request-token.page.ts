@@ -1,11 +1,11 @@
-// import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 // import{BarcodeScanner} from '@ionic-native'
-// @Component({
-//   selector: 'app-request-token',
-//   templateUrl: './request-token.page.html',
-//   styleUrls: ['./request-token.page.scss'],
-// })
-// export class RequestTokenPage implements OnInit {
+@Component({
+  selector: 'app-request-token',
+  templateUrl: './request-token.page.html',
+  styleUrls: ['./request-token.page.scss'],
+})
+export class RequestTokenPage implements OnInit {
 
 //   constructor(private barcodeScanner: BarcodeScanner) { }
 //   start_loc: any=null;
@@ -13,8 +13,8 @@
 //   cost:any=null;
 //   createdCode=null;
 //   scannedCode=null;
-//   ngOnInit() {
-//   }
+  ngOnInit() {
+  }
   
 //   createCode(){
 //     this.createdCode=this.start_loc;
@@ -26,4 +26,4 @@
 //     })
 //   }
 
-// }
+}
