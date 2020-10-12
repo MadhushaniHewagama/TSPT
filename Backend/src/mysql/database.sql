@@ -66,9 +66,9 @@ insert into login_data values ("inspector4",'inspector4',1);
 insert into login_data values ("inspector5",'inspector5',1);
 
 insert into bus_route values (1,'s_loc1','e_loc1','08:00:00','10:00:00',10.5);
-insert into bus_route values (2,'s_loc2','e_loc2','11:00:00','12:30:00'20.5);
+insert into bus_route values (2,'s_loc2','e_loc2','11:00:00','12:30:00',20.5);
 insert into bus_route values (3,'s_loc3','e_loc3','13:00:00','13:30:00',30.5);
-insert into bus_route values (4,'s_loc4','e_loc4','14:00:00','16:25:00'40.5);
+insert into bus_route values (4,'s_loc4','e_loc4','14:00:00','16:25:00',40.5);
 insert into bus_route values (5,'s_loc5','e_loc5','20:20:00','21:00:00',50.5);
 
 insert into bus values (1,1,1,1);
