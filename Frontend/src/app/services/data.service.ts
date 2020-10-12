@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 export class DataService {
 
   constructor() { }
-  user_name:any='';
+  user_name:any='user1';
   public setUserName(user_name: string){
     this.user_name=user_name;
   }
