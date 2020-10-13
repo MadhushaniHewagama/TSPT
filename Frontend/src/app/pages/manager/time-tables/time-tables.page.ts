@@ -18,7 +18,7 @@ export class TimeTablesPage implements OnInit {
   }
 
   loadRoutes() {console.log('::::::::::::::::::::::::')
-    this.loading.present();
+    // this.loading.present();
     this.managerService.getRoutes().subscribe(
       res =>{
         console.log(res[0])

@@ -17,7 +17,7 @@ export class ViewUsersPage implements OnInit {
     this.loadUsers();
   }
   loadUsers() {this.loading.present();
-    this.loading.present();
+    // this.loading.present();
     this.managerService.getUsers().subscribe(
       res =>{
         console.log(res[0])

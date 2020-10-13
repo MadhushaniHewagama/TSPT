@@ -18,7 +18,7 @@ export class ViewInspectorsPage implements OnInit {
   }
 
   loadInspectors() {
-    this.loading.present();
+    // this.loading.present();
     this.managerService.getInspector().subscribe(
       res =>{
         console.log(res[0])

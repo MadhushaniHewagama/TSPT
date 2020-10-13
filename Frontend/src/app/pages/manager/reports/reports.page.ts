@@ -21,7 +21,7 @@ export class ReportsPage implements OnInit {
   }
 
   loadTickets() {console.log('::::::::::::::::::::::::')
-    this.loading.present();
+    // this.loading.present();
     this.managerService.getTickets().subscribe(
       res =>{
         console.log(res[0])

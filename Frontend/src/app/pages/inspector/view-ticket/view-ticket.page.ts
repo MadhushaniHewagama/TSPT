@@ -18,7 +18,7 @@ export class ViewTicketPage implements OnInit {
   }
 
   loadTickets() {console.log('::::::::::::::::::::::::')
-    this.loading.present();
+    // this.loading.present();
     this.inspectorService.getTickets().subscribe(
       res =>{
         console.log(res[0])

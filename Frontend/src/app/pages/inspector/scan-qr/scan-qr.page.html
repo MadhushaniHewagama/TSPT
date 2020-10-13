@@ -7,13 +7,22 @@
         <h1>Scan QR</h1>
     </ion-card>
   
-    <ion-card class="card">
+    <ion-card class="card" *ngIf="qrscan">
       <ion-card-content>
-        <ion-card *ngIf="scannedCode">
-          <ion-card-content>
-            Result from Scan : {{scannedCode}}
+        <ion-card *ngIf="!valid">
+          <ion-card-content class='invalid'>
+            Invalid Ticket
           </ion-card-content>
         </ion-card>
+
+        <ion-card *ngIf="valid">
+          <ion-card-content class='valid'>
+            <h3>Welcome {{user_name}}</h3>
+            <h3> This is Valid Ticket</h3>           
+          </ion-card-content>
+        </ion-card>
+
+
       </ion-card-content>
     </ion-card>
       </div>
