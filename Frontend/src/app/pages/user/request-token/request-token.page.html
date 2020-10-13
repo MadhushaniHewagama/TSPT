@@ -2,8 +2,9 @@
   <ion-content id="login-content">
     <div class="login-bg"> 
     <ion-card color="danger" id="login-user">
-     
-        <h1>Create Account</h1>
+      <img class="back-arrow" (click)="backClicked()"
+      [src]="'../../assets/images/back-arrow.png'">
+        <h3>Generate Ticket</h3>
     </ion-card>
   
     <ion-card class="card">
@@ -77,7 +78,11 @@
   
       </ion-card-content>
     </ion-card>
+    <ion-card *ngIf="qr_created">
+      <ngx-qrcode [value]="createdCode"></ngx-qrcode>
+      </ion-card>
   </div>
+ 
   </ion-content>
 
 

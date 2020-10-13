@@ -136,3 +136,23 @@ export const getCredit = (req: Request, res: Response) => {
     }
   );
 };
+
+
+export const endTrip = (req: Request, res: Response) => {
+
+  const user = req.params;
+  const tiket_id = user.tiket_id;
+ 
+  const addUserQuery =
+    "update tiket set status=1 where tiket_id = "+`"${tiket_id}"`;
+  Mysql.getPool().query(addUserQuery, 
+    (err: MysqlError, results: any) => {
+    if (err) {
+      console.log("Error", err);
+      res.status(500).json({ error: err });
+    } else {
+      res.json(results);
+    }
+  }
+  );
+};

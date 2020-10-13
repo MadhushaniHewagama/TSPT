@@ -7,7 +7,7 @@
       <ion-card color="danger" id="login-user">
         <img class="back-arrow" (click)="backClicked()"
           [src]="'../../assets/images/back-arrow.png'">
-        <h1>Account Details </h1>
+        <h3>Account Details </h3>
       </ion-card>
 
       <ion-card class="card">
@@ -16,14 +16,14 @@
       <ion-item lines="none">
         <ion-label floating class="label-ash" >
 
-          User Name
+          User Name :
         </ion-label>
         <ion-input type="number" readonly class="profilepage-ion-input" id="p">{{profile.user_name}}</ion-input>
       </ion-item>
       <ion-item lines="none">
         <ion-label floating class="label-ash">
 
-         NIC
+         NIC :
         </ion-label>
         <ion-input type="number" readonly class="profilepage-ion-input" id="q">{{profile.nic}}</ion-input>
       </ion-item>
@@ -31,21 +31,21 @@
       <ion-item lines="none">
         <ion-label floating class="label-ash">
 
-         Phone Number
+         Phone Number :
         </ion-label>
         <ion-input type="number" readonly class="profilepage-ion-input" id="r">{{profile.phone_number}}</ion-input>
       </ion-item>
 
       <ion-item lines="none">
         <ion-label floating class="label-ash">
-          Email
+          Email :
         </ion-label>
         <ion-input type="number" readonly class="profilepage-ion-input" id="s">{{profile.email}}</ion-input>
       </ion-item>
       
       <ion-item lines="none">
         <ion-label floating class="label-ash">
-          Credit
+          Credit :
         </ion-label>
         <ion-input type="number" readonly class="profilepage-ion-input" id="t">{{profile.credit}}</ion-input>
       </ion-item>

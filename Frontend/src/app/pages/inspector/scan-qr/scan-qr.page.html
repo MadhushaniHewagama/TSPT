@@ -1,9 +1,22 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>scan-qr</ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content>
-
-</ion-content>
+<ion-content id="loginpage">
+  <ion-content id="login-content">
+    <div class="login-bg"> 
+    <ion-card color="danger" id="login-user">
+      <img class="back-arrow" (click)="backClicked()"
+      [src]="'../../assets/images/back-arrow.png'">
+        <h1>Scan QR</h1>
+    </ion-card>
+  
+    <ion-card class="card">
+      <ion-card-content>
+        <ion-card *ngIf="scannedCode">
+          <ion-card-content>
+            Result from Scan : {{scannedCode}}
+          </ion-card-content>
+        </ion-card>
+      </ion-card-content>
+    </ion-card>
+      </div>
+ 
+    </ion-content>
+  

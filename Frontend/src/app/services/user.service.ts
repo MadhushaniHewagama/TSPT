@@ -41,4 +41,10 @@ export class UserService {
     const url = `${API_URL}/user/qr/${user_name}`;
     return this.httpClient.get(url);
   }
+
+  public endTrip(ticket_id: any): Observable<any> {
+    const url = `${API_URL}/user/qr/${ticket_id}`;
+    return this.httpClient.put(url,{"ticket_id":ticket_id});
+  }
+
 }

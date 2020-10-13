@@ -20,7 +20,7 @@
    .home-img{
        width: 200px;
        height: 100px;
-       margin-left: 30%;
+       margin-left: 15%;
    }
     .title-container{
         
@@ -41,20 +41,21 @@
         .validate-btn{
             margin-top: 10px;
             margin-bottom: 20px;
+            
             .button{
                 //#ed1d24
                 border: 1px solid #d70010 !important;
                 border-radius: 4px;
                 padding-left: 10px !important;
                 background-color: transparent !important;
-                width: 250px !important;
+                width: 200px !important;
                 background: transparent !important;
                 margin: 0 auto;
                 height: 50px;
                 color: #d70010;
                 text-shadow: none !important;
                 margin-top: 20px ;
-                
+               
                 .button-native{
                     background-color: transparent !important;
                     background: transparent !important;
@@ -70,10 +71,12 @@
 
     .ion-login-btn{
         --box-shadow:none;
+       
     }
     .ion-account-btn{
         --box-shadow:none;
     }
+  
     ion-card{
         margin-top: -10px;
     }

@@ -1,12 +1,12 @@
 #mpage{
-    h1{
-        margin-left: 100px;
+    h3{
+        margin-left: 2%;
         margin-top: 14px;
         margin-bottom: 14px;
         display: inline-block;
     }
     .m-bg{
-        height: 170%;
+        height: auto;
         background-repeat: no-repeat;
         background: rgb(215,0,16);
         background: linear-gradient(0deg, rgba(215,0,16,5) 0%, rgba(255,255,255,1) 38%, rgba(240,219,220,1) 100%);
@@ -34,6 +34,7 @@
     }
     ion-list{
         margin-top:45px;
+        margin-bottom: 60px;
         margin-left: 10px;
         margin-right: 10px;
         padding-left: 40px;
@@ -54,12 +55,14 @@
                 img{
                     height: 70px;
                     width: 70px;
-                    margin-left: 140px;
+                    margin-left: 10%;
+                    // display: inline-block;
+                    // margin-left: 10px;
                 }
             }
         }
         ion-button{
-            margin-left: 35%;
+            margin-left: 10%;
         }
     }
     

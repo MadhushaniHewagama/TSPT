@@ -16,6 +16,13 @@
 
 
     }
+   .recipient-name{
+       p{
+        font-size: x-small;
+        color: black;
+       }
+    
+   }
     #p{
         margin-left: 100px;
     }
@@ -49,13 +56,14 @@
         margin-left:5%;
         margin-right: 5%;
     }
-    h1{
-        margin-left: 50px;
+    h3{
+        margin-left: 10%;
         margin-top: 14px;
         margin-bottom: 14px;
         display: inline-block;
 
     }
+   
 
 
 }

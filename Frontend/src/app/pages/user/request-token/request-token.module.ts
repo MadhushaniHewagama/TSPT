@@ -6,7 +6,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { RequestTokenPage } from './request-token.page';
-
+import {NgxQRCodeModule} from 'ngx-qrcode2';
 const routes: Routes = [
   {
     path: '',
@@ -20,7 +20,8 @@ const routes: Routes = [
     FormsModule,
     IonicModule,
     ReactiveFormsModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    NgxQRCodeModule
   ],
   declarations: [RequestTokenPage]
 })

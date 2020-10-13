@@ -19,13 +19,15 @@ export class RequestTokenPage implements OnInit {
   public token_form: FormGroup;
   public _formInvalid = false;
   public qr_obj:any;
+  public ticket_no:any;
   qr_created:boolean=false;
 //   constructor(private barcodeScanner: BarcodeScanner) { }
 //   start_loc: any=null;
 //   end_loc:any=null;
 //   cost:any=null;
-//   createdCode=null;
+  createdCode=null;
 //   scannedCode=null;
+qrData:any;
 constructor(
   private user_service: UserService,
   public nav: NavController,
@@ -39,8 +41,8 @@ constructor(
 ngOnInit() {    
   this.createForm();
 }
-back(): void {
-  this.nav.back();
+backClicked(): void {
+  this.router.navigate(['user-dashboard']);
 }
 
 createForm(): void {
@@ -62,6 +64,7 @@ create_qr(): void {
   this.loading.present();
   this.qr_obj = this.token_form.value;
   this.qr_created=true;
+  
   this.qr_obj['user_name']=this.dataService.getUserName();
   
   this.user_service.getCredit(this.dataService.getUserName()).subscribe(
@@ -74,26 +77,24 @@ create_qr(): void {
       }
       this.user_service.createQR(this.qr_obj).subscribe(
         res => {
-          // this.events.publish('user:added');
-          // this.errorMessage=""
-          // this.errorMessageServe.showMessage((' successfully'),this.errorMessage,'success');
-      
-          // this.router.navigate(["/admin-dashbord/users"]);
+          
           console.log("qr success");
-          console.log(JSON.stringify(res[0]));
+          console.log(JSON.stringify(res));
+          this.ticket_no=res['res'][0]['tiket_id']
+          this.qr_obj['ticket_no']=this.ticket_no
           this.loading.dismiss();
+          // this.qrData=this.ticket_no;
+          this.qrData=JSON.stringify(this.qr_obj);
+          this.createdCode=this.qrData;
         
         },
         err => {
-          // this.errorMessage="SSOID or Email already exist!!!"
-          // this.errorMessageServe.showMessage("Please check your SSO ID or Email and try again!!",this.errorMessage,'danger');
+          
           this.loading.dismiss();
         }
       );
     },
     err => {
-      // this.errorMessage="SSOID or Email already exist!!!"
-      // this.errorMessageServe.showMessage("Please check your SSO ID or Email and try again!!",this.errorMessage,'danger');
       this.loading.dismiss();
     }
   );
@@ -103,7 +104,23 @@ create_qr(): void {
 }
 
 
+end_trip(){
+  this.loading.present();
+  this.user_service.endTrip(this.ticket_no).subscribe(
+    res => {
+      console.log(res[0]);
+      this.createForm();
+      this.qr_created=false;
+      this.router.navigate(['user-dashboard']);
+      this.loading.dismiss();
+    },
+    err => {
+      console.log(err);
+      this.loading.dismiss();
+    }
+  );
 
+}
 
 
 

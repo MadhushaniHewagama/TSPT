@@ -21,7 +21,7 @@ export class TripsPage implements OnInit {
     this.navCtrl.back();
   }
   loadTrips(user_name: string) {
-    this.loading.present();
+    // this.loading.present();
     this.userService.getTrips(user_name).subscribe(
       res =>{
         console.log(res[0])
