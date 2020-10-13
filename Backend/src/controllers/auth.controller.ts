@@ -14,8 +14,10 @@ export const getLogin = (req: Request, res: Response) => {
   "';",
     (err: MysqlError, results: any) => {
         if (err) {
+          console.log(JSON.stringify(err))
             res.json({ error: err });
           } else {
+            console.log(JSON.stringify(results))
             res.json(results);
           }
     }

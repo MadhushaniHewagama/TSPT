@@ -65,8 +65,8 @@ export class LoginPage implements OnInit {
       return}
     this.authService.getLogin(this.login_user_form.controls.user_name.value).subscribe(
       res => {
-        // console.log(res);
-        // console.log(res[0].privilege);
+        console.log(res);
+        console.log(res[0].privilege);
         // console.log(res.privilege===1);
         try{
           if(res[0].password==this.login_user_form.controls.password.value){
