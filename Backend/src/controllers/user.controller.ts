@@ -108,6 +108,16 @@ export const createQR = (req: Request, res: Response) => {
       res.status(500).json({ error: err });
     } 
     else {
+
+      const addUserQuery =
+    "update user_profile set credit=credit- " +
+    `${fare}`+" where user_name = "+`"${user_name}"`;
+  Mysql.getPool().query(addUserQuery, 
+    (err: MysqlError, results: any) => {
+    if (err) {
+      console.log("Error", err);
+      res.status(500).json({ error: err });
+    } else {
       Mysql.getPool().query(
         "select Max(tiket_id) as tiket_id from tiket;",
         (err: MysqlError, res2: any) => {
@@ -115,6 +125,10 @@ export const createQR = (req: Request, res: Response) => {
           else { res.json({ res:res2 }); }
         }
       );
+    }
+  }
+  );
+      
     }
 
 
